@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Figtree:ital,wght@0,300..900;1,300..900&family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Figtree:ital,wght@0,300..900;1,300..900&family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <link rel="stylesheet" href="css/style.css">
+  <title>Frontend Mentor | Hotel booking confirmation page</title>
+
+  <style>
+    .attribution { font-size: 0.6875rem; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>
+</head>
+<body> 
+  <header>
+    <div class="logo"><img src="assets/images/logo.svg" alt="illustration of the sun"></div>
+
+    <input type="checkbox" id="menuToggle" class="menuToggle">
+    <label for="menuToggle"><img src="assets/images/icon-menu.svg" alt="hamburger menu"></label>
+    <label for="menuToggle"><img src="assets/images/icon-close.svg" alt="cancel button"></label>
+
+    <section>
+      <nav>
+        <ul>
+          <li><img src="assets/images/icon-bed.svg" alt="bed icon">Your stay <div>1</div></li>
+          <li><img src="assets/images/icon-house.svg" alt="house icon">The house</li>
+          <li><img src="assets/images/icon-pin.svg" alt="">Around town</li>
+          <li><img src="assets/images/icon-breakfast-outline.svg" alt="">Breakfast</li>
+          <li><img src="assets/images/icon-mail.svg" alt="mail icon">Messages</li>
+          </ul>
+      </nav>
+
+      <div class="weatherWidget">
+        <img src="assets/images/icon-weather.svg" alt="weather widget">
+        <p>Today in Cassis</p>
+        <p>27°</p>
+        <p>Sunny · light breeze</p>
+      </div>
+
+      <div class="menuFooter">
+        <p class="founded">Est. 1987</p>
+        <p class="address">Maison Soleil · 12 Rue des Oliviers · Cassis</p>
+        <p class="copyright">© 2026 Maison Soleil</p>
+      </div>
+    </section>
+  </header>
+
+  <main>
+    <section class="welcomePane">
+      <p>Booking · Confirmed</p>
+      <h2>Bienvenue, Lucia.</h2>
+      <div class="welcomePanebuttons">
+        <div class="receiptButton">Print receipt</div>
+        <div class="calendarButton">Add to calendar</div>
+      </div>
+    </section>
+
+    <article class="hero">
+      <section class="welcomeCard">
+        <div class="sun">
+          <p>Welcome Card</p>
+          <img src="assets/images/icon-sun.svg" alt="illustration of the sun">
+        </div>
+
+        <div class="hostNote">
+          <p class="noteP1">A note from your host</p>
+          <p class="noteP2">Margaux.</p>
+          <p class="noteP3">We're so glad you're coming. The shutters will be open, the lemonade cold, and the cat - Poivre - pretending not to notice you.</p>
+        </div>
+
+        <div class="roomInformation">
+          <p class="roomInfo1">Room</p>
+          <p class="roomInfo2">La Garrigue</p>
+        </div>
+      </section>
+
+      <section class="bookingCard">
+        <div class="receiptInfo">
+          <p class="receiptP1">Receipt</p>
+          <p class="receiptP2">№ MS-2026<br>0421-AH</p>
+        </div>
+
+        <div>
+          <p>Your stay</p>
+        </div>
+
+        <div class="checkIn">
+          <p class="item1">CHECK-IN</p>
+          <p class="item2">25 Apr</p>
+          <p class="item3">Saturday . 15:00</p>
+        </div>
+
+        <div class="checkOut">
+          <p class="item1">CHECK-OUT</p>
+          <p class="item2">29 Apr</p>
+          <p class="item3">Wednesday . 15:00</p>
+        </div>
+
+        <div class="billContainer">
+          <div class="priceTitles">
+            <p>Room . La Garrigue x 4 nights</p>
+            <p>Breakfast x 2 guests</p>
+            <p>Tourist tax</p>
+          </div>
+
+          <div class="prices">
+            <p>U+20AC 620.00</p>
+            <p>U+20AC 96.00</p>
+            <p>U+20AC 14.40</p>
+          </div>
+        </div>
+
+        <div class="paymentSummary">
+          <p class="paymentItem1">TOTAL PAID</p>
+          <p class="paymentItem2">PAID . WISE . GBP</p>
+        </div>
+
+         <div class="paymentFigures">
+          <p class="grandTotal">U+20AC 730.40</p>
+          <img src="assets/images/icon-barcode.svg" alt="barcode image" class="barcode">
+        </div>
+      </section>
+    </article>
+
+    <article class="arrivalInfo">
+      <div class="arrivalHeader">
+        <img src="assets/images/icon-key.svg" alt="key icon">
+        <p class="arrivalHeader-text">ARRIVAL</p>
+        <p class="arrivalHeader-digit">01</p>
+      </div>
+
+      <p class="arrivalInfo-item1">Check-in from 15:00</p>
+      <p class="arrivalInfo-item2">Sat, 25 April</p>
+      <p class="arrivalInfo-item3">  Ring the brass bell by the blue door. If we're at the market, the key is in the terracotta pot by the olive tree.</p>
+    </article>
+
+     <article class="wifiInfo">
+      <div class="wifiHeader">
+        <img src="assets/images/icon-wifi.svg" alt="wifi icon">
+        <p class="wifiHeader-text">WIFI</p>
+        <p class="arrivalHeader-digit">01</p>
+      </div>
+
+      <p class="wifiInfo-item1">LeSoleil . Guest</p>
+      <p class="wifiInfo-item2">Password below</p>
+
+      <div class="wifiName"> 
+        <p class="wifiName-item1">Network</p>
+        <p class="wifiName-item2">Le Soleil · Guest</p>
+      </div>
+
+      <div class="wifiPassword"> 
+        <p class="wifiPassword-item1">PASSWORD</p>
+        <p class="wifiPassword-item2">soleil-2026</p>
+        <p class="wifiPassword-item3">Copy</p>
+      </div>
+    </article>
+
+    <article class="breakfastInfo">
+      <div class="breakfastHeader">
+        <img src="assets/images/icon-breakfast-outline.svg" alt="breakfast icon">
+        <p class="breakfastHeader-text">BREAKFAST</p>
+        <p class="breakfastHeader-digit">03</p>
+      </div>
+
+      <p class="breakfastInfo-item1">Served 8 - 10:30</p>
+      <p class="arrivalInfo-item2">On the terrace</p>
+      <p class="arrivalInfo-item3">Fresh figs, Marseille honey, pain au levain, and espresso. Gluten-free option? Leave a note the night before.</p>
+    </article>
+  </main>
+
+  <footer class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>.
+    Coded by <a href="#">Your Name Here</a>.
+  </footer>
+</body>
+</html>
