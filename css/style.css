@@ -129,11 +129,12 @@ body {
     position: relative;
 }
 .sunIcon {
-    width: 12rem;
-    height: 10rem;
+    width: 30vw;
+    height: 20vh;
     position: absolute;
-    top: -5rem;
-    right: -1rem; 
+    top: -10rem;
+    right: -1rem;
+     
 }
 .widgetItem1{
     font: 1.7rem "DM Mono", sans-serif;
