@@ -22,40 +22,49 @@
   </style>
 </head>
 <body> 
-  <header>
-    <div class="logo"><img src="assets/images/logo.svg" alt="illustration of the sun"></div>
+  <header class="siteHeader">
+    <div class="logoContainer">
+      <img src="assets/images/logo.svg" alt="illustration of the sun" class="logo">
+
+    <label for="menuToggle"><img src="assets/images/icon-menu.svg" alt="hamburger menu" class="menuIcon"></label>
+    <label for="menuToggle"><img src="assets/images/icon-close.svg" alt="cancel button" class="closeIcon"></label>
+    </div>
 
     <input type="checkbox" id="menuToggle" class="menuToggle">
-    <label for="menuToggle"><img src="assets/images/icon-menu.svg" alt="hamburger menu"></label>
-    <label for="menuToggle"><img src="assets/images/icon-close.svg" alt="cancel button"></label>
 
-    <section>
-      <nav>
-        <ul>
-          <li><img src="assets/images/icon-bed.svg" alt="bed icon">Your stay <div>1</div></li>
-          <li><img src="assets/images/icon-house.svg" alt="house icon">The house</li>
-          <li><img src="assets/images/icon-pin.svg" alt="">Around town</li>
-          <li><img src="assets/images/icon-breakfast-outline.svg" alt="">Breakfast</li>
-          <li><img src="assets/images/icon-mail.svg" alt="mail icon">Messages</li>
+    <section class="menuPane">
+      <nav class="menuNavigation">
+        <ul class="menuList">
+          <li class="menuList1"><img src="assets/images/icon-bed.svg" alt="bed icon">Your stay <div>1</div></li>
+          <li class="menuList2"><img src="assets/images/icon-house.svg" alt="house icon">The house</li>
+          <li class="menuList3"><img src="assets/images/icon-pin.svg" alt="">Around town</li>
+          <li class="menuList4"><img src="assets/images/icon-breakfast-outline.svg" alt="">Breakfast</li>
+          <li class="menuList5"><img src="assets/images/icon-mail.svg" alt="mail icon">Messages</li>
           </ul>
       </nav>
 
-      <div class="weatherWidget">
-        <img src="assets/images/icon-weather.svg" alt="weather widget">
-        <p>Today in Cassis</p>
-        <p>27°</p>
-        <p>Sunny · light breeze</p>
+      <div class="menuSpacer1">  </div>
+
+      <div class="menuSpacer2">
+        <div class="weatherWidget">
+          <div class="sunIcon-container">
+           <img src="assets/images/icon-weather.svg" alt="sun icon" class="sunIcon">
+          </div>
+          <p class="widgetItem1">TODAY IN CASSIS</p>
+          <p class="widgetItem2">27°</p>
+          <p class="widgetItem3">Sunny · light breeze</p>
+        </div>
       </div>
 
       <div class="menuFooter">
-        <p class="founded">Est. 1987</p>
-        <p class="address">Maison Soleil · 12 Rue des Oliviers · Cassis</p>
-        <p class="copyright">© 2026 Maison Soleil</p>
+        <p class="founded">EST. 1987</p>
+        <p class="address">MAISON SOLEIL · 12 RUE DES OLIVIERS · CASSIS</p>
+        <p class="copyright">© 2026 MAISON SOLEIL</p>
       </div>
     </section>
   </header>
 
-  <main>
+  <main class="mainContent">
     <section class="welcomePane">
       <p>Booking · Confirmed</p>
       <h2>Bienvenue, Lucia.</h2>
@@ -181,7 +190,7 @@
 
   <footer class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>.
-    Coded by <a href="#">Your Name Here</a>.
+    Coded by <a href="#">David Badejo</a>.
   </footer>
 </body>
 </html>
