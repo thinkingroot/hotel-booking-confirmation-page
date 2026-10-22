@@ -5,13 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Outfit:wght@100..900&display=swap" rel="stylesheet">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Figtree:ital,wght@0,300..900;1,300..900&family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Outfit:wght@100..900&display=swap" rel="stylesheet">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Figtree:ital,wght@0,300..900;1,300..900&family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&display=swap" rel="stylesheet">
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
   <link rel="stylesheet" href="css/style.css">
   <title>Frontend Mentor | Hotel booking confirmation page</title>
@@ -22,37 +16,40 @@
   </style>
 </head>
 <body> 
-  <header class="siteHeader">
-    <div class="logoContainer">
-      <img src="assets/images/logo.svg" alt="illustration of the sun" class="logo">
-
-    <label for="menuToggle"><img src="assets/images/icon-menu.svg" alt="hamburger menu" class="menuIcon"></label>
-    <label for="menuToggle"><img src="assets/images/icon-close.svg" alt="cancel button" class="closeIcon"></label>
-    </div>
+  <div class="pageWrapper">
+    <header class="siteHeader">
+      <div class="headerLogoContainer">
+        <img src="assets/images/logo.svg" alt="illustration of the sun" class="headerLogo">
+      </div>
+    </header>
 
     <input type="checkbox" id="menuToggle" class="menuToggle">
+    <label for="menuToggle" class="menuIcon"><img src="assets/images/icon-menu.svg" alt="hamburger menu" class="menuHamburger"></label>
+    <label for="menuToggle" class="closeIcon"><img src="assets/images/icon-close.svg" alt="cancel button" class="cancelIcon"></label>
 
-    <section class="menuPane">
+    <!--
+   <section class="menuPane">
+      <div class="menuLogoContainer">
+        <img src="assets/images/logo.svg" alt="illustration of the sun" class="menuLogo">
+      </div>
       <nav class="menuNavigation">
         <ul class="menuList">
-          <li class="menuList1"><img src="assets/images/icon-bed.svg" alt="bed icon">Your stay <div>1</div></li>
+          <li class="menuList1"><div><img src="assets/images/icon-bed.svg" alt="bed icon">Your stay</div><span>1</span></li>
           <li class="menuList2"><img src="assets/images/icon-house.svg" alt="house icon">The house</li>
           <li class="menuList3"><img src="assets/images/icon-pin.svg" alt="">Around town</li>
           <li class="menuList4"><img src="assets/images/icon-breakfast-outline.svg" alt="">Breakfast</li>
           <li class="menuList5"><img src="assets/images/icon-mail.svg" alt="mail icon">Messages</li>
           </ul>
       </nav>
-
-      <div class="menuSpacer1">  </div>
-
-      <div class="menuSpacer2">
+      
+      <div class="menuSpacer">
         <div class="weatherWidget">
           <div class="sunIcon-container">
            <img src="assets/images/icon-weather.svg" alt="sun icon" class="sunIcon">
           </div>
-          <p class="widgetItem1">TODAY IN CASSIS</p>
-          <p class="widgetItem2">27°</p>
-          <p class="widgetItem3">Sunny · light breeze</p>
+          <p class="widgetLabel">TODAY IN CASSIS</p>
+          <p class="widgetDegree">27°</p>
+          <p class="widgetAtmosphere">Sunny · light breeze</p>
         </div>
       </div>
 
@@ -62,135 +59,153 @@
         <p class="copyright">© 2026 MAISON SOLEIL</p>
       </div>
     </section>
-  </header>
-
-  <main class="mainContent">
-    <section class="welcomePane">
-      <p>Booking · Confirmed</p>
-      <h2>Bienvenue, Lucia.</h2>
-      <div class="welcomePanebuttons">
-        <div class="receiptButton">Print receipt</div>
-        <div class="calendarButton">Add to calendar</div>
-      </div>
-    </section>
-
-    <article class="hero">
-      <section class="welcomeCard">
-        <div class="sun">
-          <p>Welcome Card</p>
-          <img src="assets/images/icon-sun.svg" alt="illustration of the sun">
-        </div>
-
-        <div class="hostNote">
-          <p class="noteP1">A note from your host</p>
-          <p class="noteP2">Margaux.</p>
-          <p class="noteP3">We're so glad you're coming. The shutters will be open, the lemonade cold, and the cat - Poivre - pretending not to notice you.</p>
-        </div>
-
-        <div class="roomInformation">
-          <p class="roomInfo1">Room</p>
-          <p class="roomInfo2">La Garrigue</p>
+-->
+    <main class="mainContent">
+      <section class="welcomePane">
+        <p>BOOKING · CONFIRMED</p>
+        <h1>Bienvenue,&nbsp;<span>Lucia.</span></h1>
+       <div class="welcomePanebuttons">
+          <button class="receiptButton">Print receipt</button>
+          <button class="calendarButton">Add to calendar</button>
         </div>
       </section>
 
-      <section class="bookingCard">
-        <div class="receiptInfo">
-          <p class="receiptP1">Receipt</p>
-          <p class="receiptP2">№ MS-2026<br>0421-AH</p>
-        </div>
+      <article class="heroCards">
+        <section class="hostNote">
+          <div class="welcomeWrapper">
+            <p>WELCOME CARD</p>
+        
+            <div class="sunContainer">
+              <img src="assets/images/icon-sun.svg" alt="" class="sun">
+            </div>
+          </div>
+          <p class="noteIntro">A note from your host,</p>
+          <p class="hostName">Margaux.</p>
+          <p class="hostRemarks">We're so glad you're coming. The shutters will be open, the lemonade cold, and the cat - Poivre - pretending not to notice you.</p>
 
-        <div>
-          <p>Your stay</p>
-        </div>
+          <div class="roomInformation">
+            <p class="roomLabel">ROOM</p>
+            <p class="roomName">La Garrigue</p>
+          </div>
+        </section>
 
-        <div class="checkIn">
-          <p class="item1">CHECK-IN</p>
-          <p class="item2">25 Apr</p>
-          <p class="item3">Saturday . 15:00</p>
-        </div>
-
-        <div class="checkOut">
-          <p class="item1">CHECK-OUT</p>
-          <p class="item2">29 Apr</p>
-          <p class="item3">Wednesday . 15:00</p>
-        </div>
-
-        <div class="billContainer">
-          <div class="priceTitles">
-            <p>Room . La Garrigue x 4 nights</p>
-            <p>Breakfast x 2 guests</p>
-            <p>Tourist tax</p>
+        <section class="bookingCard">
+          <div class="receiptInfo">
+            <p class="receiptLabel">RECEIPT</p>
+            <p class="receiptNumber">№ MS&ndash;2026<br>0421&ndash;AH</p>
           </div>
 
-          <div class="prices">
-            <p>U+20AC 620.00</p>
-            <p>U+20AC 96.00</p>
-            <p>U+20AC 14.40</p>
+          <div class="stayHeader">
+            <p>Your stay</p>
+          </div>
+        
+          <div class="stayInfo">
+            <div class="checkIn">
+              <p class="checkInLabel">CHECK IN</p>
+              <p class="checkInDate">25 Apr</p>
+              <p class="checkInTime">Saturday . 15:00</p>
+            </div>
+
+            <div class="checkOut">
+              <p class="checkOutLabel">CHECK OUT</p>
+              <p class="checkOutDate">29 Apr</p>
+              <p class="checkOutTime">Wednesday . 11:00</p>
+            </div>
+          </div>
+
+          <div class="billContainer">
+            <div class="priceTitles">
+              <p>Room &middot; La Garrigue &times; 4 nights</p>
+              <p>Breakfast &times; 2 guests</p>
+              <p>Tourist tax</p>
+            </div>
+
+            <div class="prices">
+              <p>&euro; 620.00</p>
+              <p>&euro; 96.00</p>
+              <p>&euro; 14.40</p>
+            </div>
+          </div>
+
+          <div class="paymentInfoContainer">
+            <div class="paymentSummary">
+              <p class="paymentSummaryLabel">TOTAL PAID</p>
+              <p class="paymentSummaryStatus">PAID &middot; WISE &middot; GBP</p>
+            </div>
+
+            <div class="paymentFigures">
+              <p class="grandTotal">&euro; 730.40</p>
+              <img src="assets/images/icon-barcode.svg" alt="" class="barcode">
+            </div>
+          </div>
+        </section>
+      </article>
+
+      <article class="arrivalInfo">
+        <div class="arrivalHeader">
+          <div class="keyContainer">
+            <img src="assets/images/icon-key.svg" alt="key icon" class="keyIcon">
+            <p class="arrivalHeader-text">ARRIVAL</p>
+          </div>
+
+          <div class="arrivalHeaderDigit">
+            <p>01</p>
           </div>
         </div>
 
-        <div class="paymentSummary">
-          <p class="paymentItem1">TOTAL PAID</p>
-          <p class="paymentItem2">PAID . WISE . GBP</p>
+        <p class="arrivalInfoLabel">Check-in from 15:00</p>
+        <p class="arrivalInfoDate">Sat, 25 April</p>
+        <p class="arrivalInfoNote">  Ring the brass bell by the blue door. If we're at the market, the key is in the terracotta pot by the olive tree.</p>
+      </article>
+
+      <article class="wifiInfo">
+        <div class="wifiHeader">
+          <div class="wifiIconContainer">
+            <img src="assets/images/icon-wifi.svg" alt="wifi icon" class="wifiIcon">
+            <p class="wifiHeaderText">WIFI</p>
+          </div>
+
+          <div class="wifiHeaderDigit">
+            <p>02</p>
+          </div>
         </div>
 
-         <div class="paymentFigures">
-          <p class="grandTotal">U+20AC 730.40</p>
-          <img src="assets/images/icon-barcode.svg" alt="barcode image" class="barcode">
+        <p class="wifiTitle">Le Soleil &middot; Guest</p>
+        <p class="wifiTitleInformation">Password below</p>
+
+        <div class="wifiName"> 
+          <p class="wifiNameLabel">NETWORK</p>
+          <p class="wifiNameInfo">Le Soleil &middot; Guest</p>
         </div>
-      </section>
-    </article>
 
-    <article class="arrivalInfo">
-      <div class="arrivalHeader">
-        <img src="assets/images/icon-key.svg" alt="key icon">
-        <p class="arrivalHeader-text">ARRIVAL</p>
-        <p class="arrivalHeader-digit">01</p>
-      </div>
+        <div class="wifiPassword"> 
+          <p class="wifiPasswordLabel">PASSWORD</p>
+          <div class="wifiPasswordCopy">
+            <p class="wifiPasswordAccess">soleil-2026</p>
+            <button class="wifiPasswordCopyButton">COPY</button>
+          </div>
+        </div>
+      </article>
 
-      <p class="arrivalInfo-item1">Check-in from 15:00</p>
-      <p class="arrivalInfo-item2">Sat, 25 April</p>
-      <p class="arrivalInfo-item3">  Ring the brass bell by the blue door. If we're at the market, the key is in the terracotta pot by the olive tree.</p>
-    </article>
+      <article class="breakfastInfo">
+        <div class="breakfastHeader">
+          <div class="breakfastIconContainer">
+            <img src="assets/images/icon-breakfast-outline.svg" alt="" class="breakfastIcon">
+            <p class="breakfastHeaderLabel">BREAKFAST</p>
+          </div>
+          <p class="breakfastHeaderDigit">03</p>
+        </div>
 
-     <article class="wifiInfo">
-      <div class="wifiHeader">
-        <img src="assets/images/icon-wifi.svg" alt="wifi icon">
-        <p class="wifiHeader-text">WIFI</p>
-        <p class="arrivalHeader-digit">01</p>
-      </div>
+        <p class="breakfastTime">Served 8 - 10:30</p>
+        <p class="breakfastLocation">On the terrace</p>
+        <p class="breakfastMenu">Fresh figs, Marseille honey, pain au levain, and espresso. Gluten-free option? Leave a note the night before.</p>
+      </article> 
+    </main>
 
-      <p class="wifiInfo-item1">LeSoleil . Guest</p>
-      <p class="wifiInfo-item2">Password below</p>
-
-      <div class="wifiName"> 
-        <p class="wifiName-item1">Network</p>
-        <p class="wifiName-item2">Le Soleil · Guest</p>
-      </div>
-
-      <div class="wifiPassword"> 
-        <p class="wifiPassword-item1">PASSWORD</p>
-        <p class="wifiPassword-item2">soleil-2026</p>
-        <p class="wifiPassword-item3">Copy</p>
-      </div>
-    </article>
-
-    <article class="breakfastInfo">
-      <div class="breakfastHeader">
-        <img src="assets/images/icon-breakfast-outline.svg" alt="breakfast icon">
-        <p class="breakfastHeader-text">BREAKFAST</p>
-        <p class="breakfastHeader-digit">03</p>
-      </div>
-
-      <p class="breakfastInfo-item1">Served 8 - 10:30</p>
-      <p class="arrivalInfo-item2">On the terrace</p>
-      <p class="arrivalInfo-item3">Fresh figs, Marseille honey, pain au levain, and espresso. Gluten-free option? Leave a note the night before.</p>
-    </article>
-  </main>
-
-  <footer class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>.
-    Coded by <a href="#">David Badejo</a>.
-  </footer>
+    <footer class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>.
+      Coded by <a href="#">David Badejo</a>.
+    </footer>
+  </div>
 </body>
 </html>
