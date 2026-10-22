@@ -5,7 +5,6 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    outline: solid 1px red;
 }
 body {
     width: 100%;
@@ -78,7 +77,162 @@ body {
     height: auto;
 }
 /*Menu Pane starts here*/
-
+.menuPane {
+    width: 100%;
+    max-width: 76.5rem;
+    height: auto;
+    padding: 0 1.6rem;
+    position: fixed;
+    inset: 0;
+    display: none;
+    background-color: hsl(35, 60%, 96%);
+    overflow-y: auto;
+    z-index: 90;
+}
+.menuLogoContainer {
+    width: 100%;
+    height: auto;
+    padding: 2rem 0 1.8rem;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background-color: hsl(35, 60%, 96%);
+    border-bottom: 1px solid hsl(36, 22%, 86%);
+}
+.menuLogo{
+    width: 10.2rem;
+    height: auto;
+}
+.menuNavigation {
+    width: 100%;
+    margin-top: 1.6rem;
+}
+.menuList {
+    width: 100%;
+    font-family: "DM Sans", sans-serif;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: hsl(33, 17%, 41%);
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1.6rem;
+}
+.menuList1 {
+    width: 100%;
+    padding: 1.3rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: hsl(33, 22%, 20%);
+    background-color: hsl(0, 0%, 100%);
+    border-radius: 1rem;
+}
+.menuList1 div {
+    display: flex;
+    gap: clamp(1rem, -0.4773rem + 4.5455vw, 3rem);
+    align-items: center;
+}
+.menuList1 span {
+    width: 1.6rem;
+    height: 1.6rem;
+    padding: .2rem;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 50%;
+    background-color: hsl(15, 69%, 37%);
+    color: hsl(0, 0%, 100%);
+    text-align: center;
+}
+.menuList2, .menuList3, .menuList4, .menuList5 {
+    width: 100%;
+    padding: 0 0 1rem 1.3rem;
+    display: flex;
+    align-items: center;
+    gap: clamp(1rem, -0.4773rem + 4.5455vw, 3rem);
+}
+.menuList img {
+    width: 1.8rem;
+    height: auto;
+}
+.menuNavigation::after {
+    content: "";
+    width: 100%;
+    max-width: 76.5rem;
+    height: 28rem;
+    display: block;
+}
+.weatherWidgetContainer {
+    width: 100%;
+    max-width: 76.5rem;
+    height: auto;
+    margin: 0;
+    padding:  0 0 2rem 0;
+    border-bottom: dashed 1px hsl(36, 22%, 86%);
+}
+.weatherWidget {
+    width: 100%;
+    max-width: 76.5rem;
+    height: auto;
+    padding: 1.3rem 0 1.2rem 1.6rem;
+    display: flex;
+    flex-direction: column;
+    border-radius: 2rem;
+    background-color: hsl(44, 84%, 75%);
+    overflow: hidden;
+}
+.sunIcon-container {
+    width: 100%;
+    position: relative;
+}
+.sunIcon {
+    width: clamp(10rem, 2.61364rem + 22.7273vw, 20rem);
+    height: auto;
+    position: absolute;
+    top: -5rem;
+    right: -2rem;
+}
+.widgetLabel{
+    font-family: "DM Mono", monospace;
+    font-size: 1rem;
+    margin: 0;
+    color: hsl(33, 22%, 20%);
+}
+.widgetDegree {
+    font-family: "Fraunces", sans-serif;
+    font-size: 2.7rem;
+    font-weight: 500;
+    margin: 1rem 0;
+    color: hsl(33, 15%, 15%);
+}
+.widgetAtmosphere {
+    font-family: "DM Sans", sans-serif;
+    font-size: 1.2rem;
+    color: hsl(33, 22%, 20%);
+}
+.menuFooter {
+    width: 100%;
+    max-width: 76.5rem;
+    height: auto;
+    padding-right: 10rem;
+    margin: 1.6rem 0;
+    font-family: "DM Mono", sans-serif;
+    font-size: 1rem;
+    color: hsl(33, 17%, 41%);
+}
+.address {
+    margin: 1.5rem 0 2rem 0;
+}
+.menuToggle:checked ~ .menuIcon {
+    display: none;
+}
+.menuToggle:checked ~ .closeIcon {
+    display: block;
+}
+.menuToggle:checked ~ .menuPane {
+    display: block;
+}
+/*Menu Pane ends here*/
 /*Menu Pane ends here*/
 
 /*Main content starts here*/
@@ -221,6 +375,7 @@ body {
     border-radius: 2rem;
     transform: rotate(-2deg);
     background-color: hsl(0, 0%, 100%);
+    box-shadow: 0 1rem 1rem 0 hsl(36, 22%, 86%);
 }
 .receiptInfo {
     display: flex;
@@ -329,6 +484,8 @@ body {
     flex-direction: column;
     border-radius: 2rem;
     background-color: hsl(0, 0%, 100%);
+    border: solid 1px hsl(36, 22%, 86%);
+    box-shadow: 0 0.5rem 0.5rem 0 hsl(36, 22%, 86%);
 }
 .arrivalHeader {
     display: flex;
@@ -392,6 +549,8 @@ body {
     flex-direction: column;
     border-radius: 2rem;
     background-color: hsl(0, 0%, 100%);
+    border: solid 1px hsl(36, 22%, 86%);
+    box-shadow: 0 0.5rem 0.5rem 0 hsl(36, 22%, 86%);
 }
 .wifiHeader {
     display: flex;
@@ -482,7 +641,7 @@ body {
 }
 /** Wifi card ends here **/
 
-/** Breakfast card ends here **/
+/** Breakfast card starts here **/
    .breakfastInfo {
     width: 100%;
     height: auto;
@@ -492,6 +651,8 @@ body {
     flex-direction: column;
     border-radius: 2rem;
     background-color: hsl(0, 0%, 100%);
+    border: solid 1px hsl(36, 22%, 86%);
+    box-shadow: 0 0.5rem 0.5rem 0 hsl(36, 22%, 86%);
 }
 .breakfastHeader {
     display: flex;
@@ -543,3 +704,4 @@ body {
     color: hsl(33, 17%, 41%);
     margin-top: 1.8rem;
 }
+/** Breakfast card ends here **/
