@@ -1,40 +1,46 @@
 :root {
     font-size: 62.5%;
+    --logo-seed: 10.2rem;
+    --logo-width: calc(-0.9156rem + 29.738vw);
+    --logo-height: calc(var(--logo-width) * 0.3925);
+    --tab-logo: clamp(10.2rem, 13.6vw, 15.3rem)
 }
 *, *::before, *::after {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
+a {
+    color: inherit;
+    text-decoration: none;
+}
 body {
     width: 100%;
-    max-width: 76.5rem;
     padding: 0;
     margin: 0;
     background-color: hsl(35, 60%, 96%);
 }
 .pageWrapper {
     width: 100%;
-    max-width: 76.5rem;
     position: relative;
     inset: 0;
 }
 .siteHeader {
     width: 100%;
-    max-width: 76.5rem;
     height: auto;
-    padding: 1.9rem 1.6rem 1.7rem 1.8rem;
+    padding: 1.9rem 0 1.7rem clamp(1.8rem, 4.8vw, 3.6rem);
     position: relative;
     border-bottom: 1px solid hsl(36, 22%, 86%);
 }
 .headerLogoContainer {
     width: 100%;
-    max-width: 76.5rem;
-    height: auto;
 }
 .headerLogo {
-    width: 10.2rem;
+    width: clamp(10.2rem, -0.2rem + 27.2vw, 20.4rem);
     height: auto;
+    position: relative;
+    display: block;
+    z-index: 100;
 }
 .menuToggle {
     position: absolute;
@@ -43,12 +49,12 @@ body {
     display: none;
 }
 .menuIcon {
-    width: 3.2rem;
+    width: clamp(3.2rem, 8.5333vw, 6.4rem);
     height: auto;
     position: absolute;
     padding: .5rem;
     inset-block-start: 2.1rem;
-    inset-inline-end: 1.6rem;
+    inset-inline-end: clamp(1.6rem, 4.2667vw, 3.2rem);
     display: block;
     background-color: hsl(35, 60%, 96%);
     border-radius: .5rem;
@@ -56,12 +62,12 @@ body {
     z-index: 100;
 }
 .closeIcon {
-    width: 3.2rem;
+    width: clamp(3.2rem, 8.5333vw, 6.4rem);
     height: auto;
     position: absolute;
     padding: .5rem;
     inset-block-start: 2.1rem;
-    inset-inline-end: 1.6rem;
+    inset-inline-end: clamp(1.6rem, 4.2667vw, 3.2rem);
     display: none;
     background-color: hsl(35, 60%, 96%);
     border-radius: .5rem;
@@ -79,9 +85,9 @@ body {
 /*Menu Pane starts here*/
 .menuPane {
     width: 100%;
-    max-width: 76.5rem;
+    max-width: 75rem;
     height: auto;
-    padding: 0 1.6rem;
+    padding: 0 clamp(1.6rem, 4.2667vw, 3.2rem);
     position: fixed;
     inset: 0;
     display: none;
@@ -91,17 +97,14 @@ body {
 }
 .menuLogoContainer {
     width: 100%;
-    height: auto;
-    padding: 2rem 0 1.8rem;
+    height: var(--logo-height);
+    padding: 1.9rem 0 1.7rem;
     position: sticky;
     top: 0;
     z-index: 100;
     background-color: hsl(35, 60%, 96%);
     border-bottom: 1px solid hsl(36, 22%, 86%);
-}
-.menuLogo{
-    width: 10.2rem;
-    height: auto;
+    box-sizing: content-box;
 }
 .menuNavigation {
     width: 100%;
@@ -146,10 +149,38 @@ body {
 }
 .menuList2, .menuList3, .menuList4, .menuList5 {
     width: 100%;
-    padding: 0 0 1rem 1.3rem;
+    padding: 1.3rem;
     display: flex;
     align-items: center;
-    gap: clamp(1rem, -0.4773rem + 4.5455vw, 3rem);
+    gap: 1rem;
+}
+.menuList2:hover {
+    background-color: hsl(0, 0%, 100%);
+    border-radius: 1rem;
+}
+.menuList2:active {
+    border: solid 1px red;
+}
+.menuList3:hover {
+    background-color: hsl(0, 0%, 100%);
+    border-radius: 1rem;
+}
+.menuList3:active {
+    border: solid 1px red;
+}
+.menuList4:hover {
+    background-color: hsl(0, 0%, 100%);
+    border-radius: 1rem;
+}
+.menuList4:active {
+    border: solid 1px red;
+}
+.menuList5:hover {
+    background-color: hsl(0, 0%, 100%);
+    border-radius: 1rem;
+}
+.menuList5:active {
+    border: solid 1px red;
 }
 .menuList img {
     width: 1.8rem;
@@ -158,13 +189,11 @@ body {
 .menuNavigation::after {
     content: "";
     width: 100%;
-    max-width: 76.5rem;
     height: 28rem;
     display: block;
 }
 .weatherWidgetContainer {
     width: 100%;
-    max-width: 76.5rem;
     height: auto;
     margin: 0;
     padding:  0 0 2rem 0;
@@ -172,7 +201,6 @@ body {
 }
 .weatherWidget {
     width: 100%;
-    max-width: 76.5rem;
     height: auto;
     padding: 1.3rem 0 1.2rem 1.6rem;
     display: flex;
@@ -189,7 +217,7 @@ body {
     width: clamp(10rem, 2.61364rem + 22.7273vw, 20rem);
     height: auto;
     position: absolute;
-    top: -5rem;
+    top: -7rem;
     right: -2rem;
 }
 .widgetLabel{
@@ -199,7 +227,7 @@ body {
     color: hsl(33, 22%, 20%);
 }
 .widgetDegree {
-    font-family: "Fraunces", sans-serif;
+    font-family: "Fraunces", serif;
     font-size: 2.7rem;
     font-weight: 500;
     margin: 1rem 0;
@@ -212,7 +240,7 @@ body {
 }
 .menuFooter {
     width: 100%;
-    max-width: 76.5rem;
+    max-width: 70.5rem;
     height: auto;
     padding-right: 10rem;
     margin: 1.6rem 0;
@@ -238,23 +266,22 @@ body {
 /*Main content starts here*/
 .mainContent {
     width: 100%;
-    max-width: 76.5rem;
-    padding: 0 1.6rem;
+    padding: 0 clamp(1.6rem, 4.2667vw, 3.2rem);
 }
 .welcomePane {
     width: 100%;
 }
 .welcomePane p {
     font-family: "DM Mono", monospace;
-    font-size: 1rem;
+    font-size: clamp(1rem, 2.6667vw, 2rem);
     font-weight: 500;
-    line-height: 3rem;
+    line-height: 3;
     letter-spacing: .3rem;
     color: hsl(33, 17%, 41%);
 }
 .welcomePane h1 {
     font-family: "Fraunces", sans-serif;
-    font-size: 3.42rem;
+    font-size: clamp(3.42rem, 9.12vw, 6.84rem);
     font-weight: 500;
     letter-spacing: .15rem;
     color: hsl(33, 15%, 15%);
@@ -267,46 +294,49 @@ body {
     width: 100%;
     padding: 1rem 0;
     display: flex;
-    gap: 1.6rem;
+    gap: clamp(1.6rem, 4.2667vw, 3.2rem);
 }
 .receiptButton {
-    width: 16.35rem;
+    width: clamp(16.35rem, 43.6vw, 32.7rem);
     height: auto;
     font-family: "DM Sans", sans-serif;
-    font-size: 1.5rem;
+    font-size: clamp(1.5rem, 4vw, 3rem);
+    font-weight: 600;
     padding: 1rem;
     text-align: center;
     border-radius: 2rem;
-    border: solid 1px hsl(33, 22%, 20%);
+    border: solid 1px hsl(36, 22%, 86%);
+    background-color: hsl(35, 60%, 96%);
 }
 .calendarButton {
-    width: 16.35rem;
+    width: clamp(16.35rem, 43.6vw, 32.7rem);
     height: auto;
     font-family: "DM Sans", sans-serif;
-    font-size: 1.5rem;
+    font-size: clamp(1.5rem, 4vw, 3rem);
+    font-weight: 600;
     padding: 1rem;
     text-align: center;
     border-radius: 2rem;
-    color: hsl(35, 60%, 96%);
+    color: hsl(36, 22%, 86%);
     background-color: hsl(33, 15%, 15%);
 }
 
 /** hero cards start here **/
 .heroCards {
     width: 100%;
-    padding: 0 1rem;
+    padding: 0 clamp(1rem, 2.6667vw, 2rem);
 }
 
 /** host note container starts here **/
 .hostNote {
     width: 100%;
     height: auto;
-    padding: 2.3rem 2.4rem 1.4rem;
-    margin: 3rem 0 1.2rem;
+    padding: 2.3rem clamp(2.4rem, 6.4vw, 4.8rem) 1.4rem;
+    margin: 3rem 0 clamp(1.2rem, 3.2vw, 2.4rem);
     border-radius: 2rem;
     transform: rotate(2deg);
-    background-color: hsl(18, 62%, 47%);
-    box-shadow: 0 20px 40px -1px hsl(18, 62%, 47%);
+    background-color: hsl(15, 74%, 41%);
+    box-shadow: 0 10px 30px -1px hsl(18, 62%, 47%);
 }
 .welcomeWrapper {
     width: 100%;
@@ -318,33 +348,33 @@ body {
 }
 .welcomeWrapper p {
     font-family: "DM Mono", monospace;
-    font-size: 1.1rem;
-    color: hsl(36, 22%, 86%);
+    font-size: clamp(1.1rem, 2.9334vw, 2.2rem);
+    color: hsl(41, 100%, 93%);
 }
 .sunContainer {
-    width: 5rem;
+    width: clamp(5rem, 13.3333vw, 10rem);
 }
 .sun {
-    width: 4.875rem;
+    width: clamp(4.875rem, 13vw, 9.75rem);
     height: auto;
 }
 .noteIntro{
-    font-family: "Fraunces", sans-serif;
-    font-size: 1.9rem;
+    font-family: "Fraunces", serif;
+    font-size: clamp(1.9rem, 5.0667vw, 3.8rem);
     font-style: italic;
     color: hsl(44, 84%, 75%);
     margin: 2rem 0 1rem;
 }
 .hostName {
-    font-family: "Serif", sans-serif;
+    font-family: "Fraunces", serif;
     font-style: italic;
-    font-size: 3.9rem;
-    color: hsl(35, 60%, 96%);   
+    font-size: clamp(3.8rem, 10.1333vw, 7.6rem);
+    color: hsl(41, 100%, 93%);   
 }
 .hostRemarks {
     font-family: "DM sans", sans-serif;
-    font-size: 1.25rem;
-    color: hsl(35, 60%, 96%);
+    font-size: clamp(1.25rem, 3.3333vw, 2.5rem);
+    color: hsl(41, 100%, 93%);
     margin: 3rem 0;
     line-height: 1.5;
     letter-spacing: .05rem;
@@ -360,18 +390,18 @@ body {
 }
 .roomLabel {
     font-family: "DM mono", monospace;
-    font-size: 1.2rem;
-    color: hsl(35, 60%, 96%);  
+    font-size: clamp(1.2rem, 3.2vw, 2.4rem);
+    color: hsl(41, 100%, 93%);  
 }
 .roomName {
-    font-family: "Fraunces", sans-serif;
-    font-size: 2rem;
-    color: hsl(35, 60%, 96%);  
+    font-family: "Fraunces", serif;
+    font-size: clamp(2rem, 5.3333vw, 4rem);
+    color: hsl(41, 100%, 93%);  
 }
 .bookingCard {
     width: 100%;
     height: auto;
-    padding: 2.4rem 2.4rem 1.5rem;
+    padding: 2.4rem clamp(2.4rem, 6.4vw, 4.8rem) 1.5rem;
     border-radius: 2rem;
     transform: rotate(-2deg);
     background-color: hsl(0, 0%, 100%);
@@ -383,23 +413,27 @@ body {
 }
 .receiptLabel {
     font-family:'DM Mono', monospace;
-    font-size: 1rem;
+    font-size: clamp(1rem, 2.6667vw, 2rem);
+    color: hsl(15, 69%, 37%);
 }
 .receiptNumber {
     font-family:'DM Mono', monospace;
-    font-size: 1rem;
+    font-size: clamp(1rem, 2.6667vw, 2rem);
+    color: hsl(15, 69%, 37%);
 }
 .stayHeader {
-    font-family: 'Fraunces', sans-serif;
-    font-size: 1.8rem;
+    font-family: 'Fraunces', serif;
+    font-size: clamp(1.8rem, 4.8vw, 3.6rem);
+    padding-bottom: 1rem;
     margin: 0;
-    border-bottom: dashed 1px;
+    border-bottom: dashed 1px hsl(33, 17%, 41%);
+    color: hsl(33, 15%, 15%);
 }
 .stayInfo {
     display: flex;
     justify-content: space-between;
     padding: 2.2rem 0 2rem;
-    border-bottom: dashed 1px;
+    border-bottom: dashed 1px hsl(33, 17%, 41%);
 }
 .checkIn, .checkOut {
     display: flex;
@@ -408,18 +442,21 @@ body {
 }
 .checkInLabel, .checkOutLabel {
     font-family:'DM Mono', monospace;
-    font-size: 1rem;
+    font-size: clamp(1rem, 2.6667vw, 2rem);
+    color: hsl(33, 17%, 41%);
 }
 .checkInDate, .checkOutDate {
-    font-family: 'Fraunces', sans-serif;
-    font-size: 2.8rem;
+    font-family: 'Fraunces', serif;
+    font-size: clamp(2.8rem, 7.4666vw, 5.6rem);
     margin-top: 1.5rem;
+    color: hsl(33, 15%, 15%);
 }
 .checkInTime, .checkOutTime {
     font-family:'DM Sans', sans-serif;
-    font-size: 1.1rem;
+    font-size: clamp(1.1rem, 2.9334vw, 2.2rem);
     font-weight: 500;
     margin-top: 1rem;
+    color: hsl(33, 17%, 41%);
 }
 .billContainer {
     padding: 1.5rem 0;
@@ -428,18 +465,20 @@ body {
 }
 .priceTitles {
     font-family:'DM Sans', sans-serif;
-    font-size: 1.4rem;
+    font-size: clamp(1.4rem, 3.7333vw, 2.8rem);
     display: flex;
     flex-direction: column;
     gap: 1.4rem;
+    color: hsl(33, 15%, 15%);
 }
 .prices {
     font-family: 'DM Mono', monospace;
-    font-size: 1.18rem;
+    font-size: clamp(1.18rem, 3.1467vw, 2.36rem);
     display: flex;
     flex-direction: column;
-    gap: 1.4rem;
+    gap: max(2.6667vw, 1.6rem);
     text-align: right;
+    color: hsl(33, 15%, 15%);
 }
 .paymentInfoContainer {
     display: flex;
@@ -453,22 +492,26 @@ body {
 }
 .paymentSummaryLabel {
     font-family: 'DM Mono', monospace;
-    font-size: 1.18rem;
+    font-size: clamp(1.18rem, 3.14667vw, 2.36rem);
     letter-spacing: .2rem;
     padding: .4rem 0 0 0;
+    color: hsl(33, 17%, 41%);
 }
 .paymentSummaryStatus {
     font-family: 'DM Mono', monospace;
-    font-size: 1rem;
+    font-size: clamp(1rem, 2.6667vw, 2rem);
     letter-spacing: .1rem;
     padding: .3rem 0 0 0;
     margin-top: 4rem;
+    color: hsl(33, 17%, 41%);
 }
 .paymentFigures p {
-    font-family: 'Fraunces', sans-serif;
-    font-size: 2.2rem;
+    font-family: 'Fraunces', serif;
+    font-size: clamp(2.2rem, 5.8667vw, 4.4rem);
+    color: hsl(33, 15%, 15%);
 }
 .barcode {
+    width: 100%;
     margin-top: 2.6rem;
 }
 /** bill container ends here **/
@@ -478,12 +521,12 @@ body {
 .arrivalInfo {
     width: 100%;
     height: auto;
-    padding: 1.8rem 2.2rem;
+    padding: 1.8rem clamp(2.2rem, 5.8667vw, 4.4rem);
     margin: 4.7rem 0 1.7rem;
     display: flex;
     flex-direction: column;
     border-radius: 2rem;
-    background-color: hsl(0, 0%, 100%);
+    background-color: hsl(40, 60%, 98%);
     border: solid 1px hsl(36, 22%, 86%);
     box-shadow: 0 0.5rem 0.5rem 0 hsl(36, 22%, 86%);
 }
@@ -494,11 +537,11 @@ body {
 }
 .keyContainer {
     display: flex;
-    gap: 1rem;
+    gap: clamp(1rem, 2.6667vw, 2rem);
     align-items: center;
 }
 .keyIcon {
-    width: 3.5rem;
+    width: clamp(3.5rem, 9.3333vw, 7rem);
     height: auto;
     padding: .5rem;
     border-radius: .5rem;
@@ -506,33 +549,33 @@ body {
 }
 .keyContainer p {
     font-family: 'DM Mono', monospace;
-    font-size: 1.25rem;
+    font-size: clamp(1.25rem, 3.3333vw, 2.5rem);
     font-weight: 500;
     letter-spacing: .25rem;
     color: hsl(15, 74%, 41%);
 }
 .arrivalHeaderDigit {
-    font-family: 'Fraunces', sans-serif;
-    font-size: 2.5rem;
+    font-family: 'Fraunces', serif;
+    font-size: clamp(2.5rem, 6.6667vw,5rem);
     font-weight: 500;
     color: hsl(15, 74%, 41%);
 }
 .arrivalInfoLabel {
-    font-family: "Fraunces", sans-serif;
-    font-size: 2.1rem;
+    font-family: "Fraunces", serif;
+    font-size: clamp(2.1rem, 5.6vw, 4.2rem);
     font-weight: 500;
     color: hsl(33, 22%, 20%);
     margin: 2.5rem 0 1.6rem;
 }
 .arrivalInfoDate {
     font-family: "DM Sans", sans-serif;
-    font-size: 1.2rem;
+    font-size: clamp(1.2rem, 3.2vw, 2.4rem);
     font-weight: 600;
     color: hsl(33, 17%, 41%);
 }
 .arrivalInfoNote {
     font-family: "DM Sans", sans-serif;
-    font-size: 1.3rem;
+    font-size: clamp(1.3rem, 3.4667vw, 2.6rem);
     font-weight: 500;
     color: hsl(33, 17%, 41%);
     margin-top: 1.8rem;
@@ -541,14 +584,14 @@ body {
 
 /** Wifi card starts here **/
 .wifiInfo {
-    width: 100%
+    width: 100%;
     height: auto;
-    padding: 1.8rem 1.5rem 1.9rem;
+    padding: 1.8rem clamp(1.5rem, 4vw, 3rem) 1.9rem;
     margin: 1rem 0;
     display: flex;
     flex-direction: column;
     border-radius: 2rem;
-    background-color: hsl(0, 0%, 100%);
+    background-color: hsl(40, 60%, 98%);
     border: solid 1px hsl(36, 22%, 86%);
     box-shadow: 0 0.5rem 0.5rem 0 hsl(36, 22%, 86%);
 }
@@ -559,54 +602,54 @@ body {
 }
 .wifiIconContainer {
     display: flex;
-    gap: 1rem;
+    gap: clamp(1rem, 2.6667vw, 2rem);
     align-items: center;
 }
 .wifiIconContainer p {
     font-family: 'DM Mono', monospace;
-    font-size: 1.25rem;
+    font-size: clamp(1.25rem, 3.3333vw, 2.5rem);
     font-weight: 500;
     letter-spacing: .25rem;
     color: hsl(230, 49%, 56%);
 }
 .wifiHeaderDigit {
-    font-family: 'Fraunces', sans-serif;
-    font-size: 2.5rem;
+    font-family: 'Fraunces', serif;
+    font-size: clamp(2.5rem, 6.6667vw,5rem);
     font-weight: 500;
     color: hsl(230, 49%, 56%);
 }
 .wifiIcon {
-    width: 4rem;
+    width: clamp(4rem, 10.6667vw, 8rem);
     height: auto;
     padding: .7rem;
     border-radius: .5rem;
     background-color: hsl(230, 49%, 56%);
 }
 .wifiTitle {
-    font-family: 'Fraunces', sans-serif;
-    font-size: 2.1rem;
+    font-family: 'Fraunces', serif;
+    font-size: clamp(2.1rem, 5.6vw, 4.2rem);
     font-weight: 600;
     letter-spacing: .1rem;
     margin: 2.5rem 0 1.4rem;
 }
 .wifiTitleInformation {
     font-family: 'DM Mono', monospace;
-    font-size: 1.12rem;
+    font-size: clamp(1.12rem, 2.9867vw, 2.24rem);
     margin-bottom: 1.7rem;
     color: hsl(33, 17%, 41%);
 }
 .wifiName, .wifiPassword {
     display: flex;
     justify-content: space-between;
-    padding: 1.2rem 1rem;
+    padding: 1.2rem clamp(1rem, 2.6667vw, 2rem);
     border-radius: 1rem;
     align-items: center;
-    background-color: hsl(35, 60%, 96%);
+    background-color: hsl(30, 24%, 93%);
     margin-bottom: .2rem;
 }
  .wifiPasswordCopy {
     font-family: "DM Sans", sans-serif;
-    font-size: 1.2rem;
+    font-size: clamp(1.2rem, 3.2vw, 2.4rem);
     font-weight: 500;
     display: flex;
     gap: .7rem;
@@ -614,30 +657,38 @@ body {
 }
 .wifiNameLabel {
     font-family: 'DM Mono', monospace;
-    font-size: 1.2rem;
+    font-size: clamp(1.2rem, 3.2vw, 2.4rem);
     letter-spacing: .2rem;
     color: hsl(32, 20%, 29%);
 }
 .wifiNameInfo {
     font-family: "DM Sans", sans-serif;
-    font-size: 1.2rem;
+    font-size: clamp(1.2rem, 3.2vw, 2.4rem);
     font-weight: 500;
 }
 .wifiPasswordLabel {
     font-family: 'DM Mono', monospace;
-    font-size: 1.2rem;
+    font-size: clamp(1.2rem, 3.2vw, 2.4rem);
     letter-spacing: .2rem;
     color: hsl(32, 20%, 29%);
 }
 .wifiPasswordCopyButton {
-    width: 4rem;
+    width: clamp(4rem, 10.6667vw, 8rem);
     height: auto;
     font-family: 'DM Mono',monospace;
-    font-size: 1rem;
+    font-size: clamp(1rem, 2.6667vw, 2rem);
     padding: .2rem;
     letter-spacing: .05rem;
+    text-align: center;
     border-radius: 1rem;
     color: hsl(32, 20%, 29%);
+    border: solid 1px hsl(36, 22%, 86%);
+}
+.wifiPasswordCopyButton:hover {
+background-color: hsl(36, 22%, 86%);
+}
+.wifiPasswordCopyButton:active {
+border: solid 1px red;
 }
 /** Wifi card ends here **/
 
@@ -645,12 +696,12 @@ body {
    .breakfastInfo {
     width: 100%;
     height: auto;
-    padding: 1.8rem 1.5rem 1.9rem;
+    padding: 1.8rem clamp(1.5rem, 4vw, 3rem) 1.9rem;
     margin: 1rem 0;
     display: flex;
     flex-direction: column;
     border-radius: 2rem;
-    background-color: hsl(0, 0%, 100%);
+    background-color: hsl(40, 60%, 98%);
     border: solid 1px hsl(36, 22%, 86%);
     box-shadow: 0 0.5rem 0.5rem 0 hsl(36, 22%, 86%);
 }
@@ -661,47 +712,749 @@ body {
 }
 .breakfastIconContainer {
     display: flex;
-    gap: 1rem;
+    gap: clamp(1rem, 2.6667vw, 2rem);
     align-items: center;
 }
 .breakfastHeaderLabel {
     font-family: 'DM Mono', monospace;
-    font-size: 1.25rem;
+    font-size: clamp(1.25rem, 3.3333vw, 2.5rem);
     font-weight: 500;
     letter-spacing: .25rem;
     color: hsl(340, 48%, 52%);
 }
 .breakfastHeaderDigit {
-    font-family: 'Fraunces', sans-serif;
-    font-size: 2.5rem;
+    font-family: 'Fraunces', serif;
+    font-size: clamp(2.5rem, 6.6667vw,5rem);
     font-weight: 500;
     color: hsl(340, 48%, 52%);
 }
 .breakfastIcon {
-    width: 4rem;
+    width: clamp(4rem, 10.6667vw, 8rem);
     height: auto;
     padding: .7rem;
     border-radius: .5rem;
+    fill: hsl(40, 60%, 98%);
     background-color: hsl(340, 48%, 52%);
 }
 .breakfastTime {
     font-family: 'Fraunces', sans-serif;
-    font-size: 2.1rem;
+    font-size: clamp(2.1rem, 5.6vw, 4.2rem);
     font-weight: 600;
     letter-spacing: .1rem;
     margin: 2.5rem 0 1.4rem;
 }
 .breakfastLocation {
-    font-family: 'DM Mono', monospace;
-    font-size: 1rem;
+    font-family: 'DM Sans', sans-serif;
+    font-size: clamp(1.25rem, 3.3333vw, 2.5rem);
     margin-bottom: 1.7rem;
     color: hsl(33, 17%, 41%);
 }
 .breakfastMenu {
     font-family: "DM Sans", sans-serif;
-    font-size: 1.3rem;
+    font-size: clamp(1.3rem, 3.4667vw, 2.6rem);
     font-weight: 500;
     color: hsl(33, 17%, 41%);
     margin-top: 1.8rem;
 }
 /** Breakfast card ends here **/
+
+@media (min-width: 750px) {
+    /** header starts here **/
+    .siteHeader {
+        min-width: 75rem;
+        padding: 1.9rem clamp(2.13rem, 2.84vw, 3.195rem) 1.7rem clamp(2.2rem, 2.933vw, 3.3rem);
+    }
+    .headerLogoContainer {
+        height: calc(var(--tab-logo) * 0.3925);
+    }
+    .headerLogo {
+        width: var(--tab-logo);
+        inset-inline-start: clamp(2.2rem, 2.93vw, 3.3rem);
+    }
+    .menuIcon {
+        position: fixed;
+        width: clamp(3.2rem, 4.267vw, 4.8rem);
+        inset-inline-end: clamp(2.13rem, 2.84vw, 3.195rem);
+    
+    }
+    .closeIcon {
+        position: fixed;
+        width: clamp(3.2rem, 4.267vw, 4.8rem);
+        inset-inline-end: clamp(2.13rem, 2.84vw, 3.195rem);
+    }
+/** Header ends here **/
+
+/*Menu Pane starts here*/
+    .menuPane {
+        width: clamp(37.5rem, 50vw, 56.25rem);
+        height: auto;
+        padding: 0 clamp(1.6rem, 2.1333vw, 2.4rem);
+        inset-block-start: calc(var(--tab-logo) * 0.3925 + 3.6rem);
+    }
+    .menuLogoContainer {
+        display: none;
+    }
+    .menuNavigation {
+        width: 100%;
+        margin-top: 1.6rem;
+    }
+    .menuList {
+        font-size: clamp(1.2rem, 1.6vw, 1.8rem);
+        gap: clamp(1.6rem, 2.1333vw, 2.4rem);
+    }
+    .menuList1 {
+        padding: 1.3rem clamp(1.3rem, 1.7333vw, 1.95rem);
+    }
+    .menuList1 div {
+        gap: clamp(1rem, 1.3333vw, 1.5rem);
+    }
+    .menuList1 span {
+        font-size: clamp(1rem, 1.3333vw, 1.5rem);
+    }
+.menuList2, .menuList3, .menuList4, .menuList5 {
+    padding: 1.3rem clamp(1.3rem, 1.7333vw, 1.95rem);
+    gap: clamp(1rem, 1.3333vw, 1.5rem);
+}
+.menuList img {
+    width: clamp(1.8rem, 2.4vw, 2.7rem);
+    height: auto;
+}
+.weatherWidget {
+    padding: 1.3rem 0 1.2rem clamp(1.6rem, 2.1333vw, 2.4rem);
+}
+.sunIcon {
+    width: clamp(10rem, 13.3333vw, 15rem);
+}
+.widgetLabel{
+    font-size: clamp(1rem, 1.3333vw, 1.5rem);
+}
+.widgetDegree {
+    font-size: clamp(2.7rem, 3.6vw, 4.05rem);
+}
+.widgetAtmosphere {
+    font-size: clamp(1.2rem, 1.6vw, 1.8rem);
+}
+.menuFooter {
+    padding-right: clamp(10rem, 13.3333vw, 15rem);
+    font-size: clamp(1rem, 1.3333vw, 1.5rem);
+}
+.address {
+    margin: 1.5rem 0 2rem 0;
+}
+.menuToggle:checked ~ .mainContent::before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    inset-block-start: calc(var(--tab-logo) * 0.3925 + 3.9rem);
+    inset-block-end: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: block;
+}
+
+/*Menu Pane ends here*/
+
+/** Main content starts here **/
+    .mainContent {
+        display: grid;
+        grid-template-columns: (1fr, 1fr);
+        grid-template-areas:
+        "heroCards welcomePane"
+        "heroCards serviceInformation";
+        column-gap: clamp(2.133rem, 2.84vw, 3.195rem);
+        padding: 0 clamp(2.133rem, 2.84vw, 3.195rem);
+    }
+    .welcomePane {
+        width: clamp(34.3rem, 45.73vw, 51.45rem);
+        grid-area: welcomePane;
+    }
+    .welcomePane p {
+        font-size: clamp(1rem, 1.3333vw, 1.5rem);  
+    }
+    .welcomePane h1 {
+        font-size: clamp(3.42rem, 4.56vw, 5.13rem);
+    }
+    .welcomePanebuttons {
+        gap: clamp(1.6rem, 2.1333vw, 2.4rem);
+    }
+    .receiptButton {
+        width: clamp(16.35rem, 21.8vw, 24.525rem);
+        font-size: clamp(1.5rem, 2vw, 2.25rem);
+    }
+    .calendarButton {
+        width: clamp(16.35rem, 21.8vw, 24.525rem);
+        font-size: clamp(1.5rem, 2vw, 2.25rem);
+    }
+
+    /** Hero cards start here **/
+    .heroCards {
+        width: clamp(34.3rem, 45.73vw, 51.45rem);
+        grid-area: heroCards;
+        padding: 0 clamp(1rem, 1.3333vw, 1.5rem);
+    }
+    .hostNote {
+        padding: 2.3rem clamp(2.4rem, 3.2vw, 3.6em) 1.4rem;
+    }
+    .welcomeWrapper p {
+        font-size: clamp(1.1rem, 1.467vw, 1.65rem);
+    }
+    .sunContainer {
+        width: clamp(5rem, 6.67vw, 7.5rem);
+    }
+    .sun {
+        width: clamp(4.875rem, 6.5vw, 7.3125rem);
+    }
+    .noteIntro{
+        font-size: clamp(1.9rem, 2.533vw, 2.85rem);
+    }
+    .hostName {
+        font-size: clamp(3.8rem, 5.067vw, 5.7rem); 
+    }
+    .hostRemarks {
+        font-size: clamp(1.25rem, 1.67vw, 1.875rem);
+    }
+    .roomLabel {
+        font-size: clamp(1.2rem, 1.6vw, 1.8rem);
+    }
+    .roomName {
+        font-size: clamp(2rem, 2.67vw, 3rem);  
+    }
+
+    /** booking card starts here **/
+    .bookingCard {
+        padding: 2.4rem clamp(2.4rem, 3.2vw, 3.6em) 1.5rem;
+    }
+    .receiptLabel {
+        font-size: clamp(1rem, 1.3333vw, 1.5rem);
+    }
+    .receiptNumber {
+        font-size: clamp(1rem, 1.3333vw, 1.5rem);
+    }
+    .stayHeader {
+        font-size: clamp(1.8rem, 2.4vw, 2.7rem);
+    }
+    .checkInLabel, .checkOutLabel {
+        font-size: clamp(1rem, 1.3333vw, 1.5rem);
+    }
+    .checkInDate, .checkOutDate {
+        font-size: clamp(2.8rem, 3.73vw, 4.2rem);
+    }
+    .checkInTime, .checkOutTime {
+        font-size: clamp(1.1rem, 1.467vw, 1.65rem); 
+    }
+    .priceTitles {
+        font-size: clamp(1.4rem, 1.867vw, 2.1rem);
+        gap: clamp(1.4rem, 1.867vw, 2.1rem);
+    }
+    .prices {
+        font-size: clamp(1.18rem, 1.573vw, 1.77rem);
+        gap: clamp(1.4rem, 1.867vw, 2.1rem);
+    }
+    .paymentSummaryLabel {
+        font-size: clamp(1.18rem, 1.573vw, 1.77rem);
+    }
+    .paymentSummaryStatus {
+        font-size: clamp(1rem, 1.3333vw, 1.5rem);
+    }
+    .paymentFigures p {
+    font-size: clamp(2.2rem, 2.93vw, 3.3rem);
+    }
+/** hero cards ends here **/
+
+/** Service Information card starts here **/
+    .serviceInformation {
+        width: clamp(34.3rem, 45.73vw, 51.45rem);
+        grid-area: serviceInformation;
+    }
+    .arrivalInfo {
+        padding: 1.8rem clamp(2.2rem, 2.93vw, 3.3rem);
+    }
+
+    .keyContainer {
+        gap: clamp(1rem, 1.3333vw, 1.5rem);
+    }
+    .keyIcon {
+        width: clamp(3.5rem, 4.67vw, 5.25rem);
+    }
+    .keyContainer p {
+        font-size: clamp(1.25rem, 1.67vw, 1.875rem);
+    }
+    .arrivalHeaderDigit {
+        font-size: clamp(2.5rem, 3.3vw, 3.75rem);
+    }
+    .arrivalInfoLabel {
+        font-size: clamp(2.1rem, 2.8vw, 3.15rem);
+    }
+    .arrivalInfoDate {
+        font-size: clamp(1.2rem, 1.6vw, 1.8rem);
+    }
+    .arrivalInfoNote {
+        font-size: clamp(1.3rem, 1.73vw, 1.95rem);
+    }
+/** Arrival card ends here **/
+
+/** Wifi card starts here **/
+    .wifiInfo {
+        padding: 1.8rem clamp(1.5rem, 2vw, 2.25rem) 1.9rem;
+    }
+    .wifiIconContainer {
+        gap: clamp(1rem, 1.3333vw, 1.5rem);
+    }
+    .wifiIconContainer p {
+        font-size: clamp(1.25rem, 1.67vw, 1.875rem);
+    }
+    .wifiHeaderDigit { 
+        font-size: clamp(2.5rem, 3.3vw, 3.75rem);
+    }
+    .wifiIcon {
+        width: clamp(4rem, 5.33vw, 6rem);
+    }
+    .wifiTitle {
+        font-size: clamp(2.1rem, 2.8vw, 3.15rem);
+    }
+    .wifiTitleInformation {
+        font-size: clamp(1.12rem, 1.493vw, 1.68rem);
+    }
+    .wifiName, .wifiPassword {
+        padding: 1.2rem clamp(1rem, 1.3333vw, 1.5rem);
+    }
+    .wifiPasswordCopy {
+        font-size: clamp(1.2rem, 1.6vw, 1.8rem);
+    }
+    .wifiNameLabel {
+        font-size: clamp(1.2rem, 1.6vw, 1.8rem);
+    }
+    .wifiNameInfo {
+        font-size: clamp(1.2rem, 1.6vw, 1.8rem);
+    }
+    .wifiPasswordLabel {
+        font-size: clamp(1.2rem, 1.6vw, 1.8rem);
+    }
+    .wifiPasswordCopyButton {
+        width: clamp(4rem, 5.33vw, 6rem);
+        font-size: clamp(1rem, 1.3333vw, 1.5rem);
+    }
+/** Wifi card ends here **/
+
+/** Breakfast card starts here **/
+   .breakfastInfo {
+        padding: 1.8rem clamp(1.5rem, 2vw, 2.25rem) 1.9rem;
+    }
+    .breakfastIconContainer {
+        gap: clamp(1rem, 1.3333vw, 1.5rem);
+    }
+    .breakfastHeaderLabel {
+        font-size: clamp(1.25rem, 1.67vw, 1.875);
+    }
+    .breakfastHeaderDigit {
+        font-size: clamp(2.5rem, 3.3vw, 3.75rem);
+    }
+    .breakfastIcon {
+        width: clamp(4rem, 5.33vw, 6rem);
+    }
+    .breakfastTime {
+        font-size: clamp(2.1rem, 2.8vw, 3.15rem);
+    }
+    .breakfastLocation {
+        font-size: clamp(1.25rem, 1.67vw, 1.875);
+    }
+    .breakfastMenu {
+        font-size: clamp(1.3rem, 1.73vw, 1.95rem);
+    }
+/** Breakfast card ends here **/
+
+@media (min-width: 1125px){
+    .pageWrapper {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        column-gap: 2.4rem;
+        grid-template-areas:
+        "siteHeader siteHeader siteHeader"
+        "menuPane heroCards welcomePane"
+        "menuPane heroCards serviceInformation";
+    }
+    .headerLogoContainer {
+        height: calc(var(--logo-seed) * 0.3925);
+    }
+    .headerLogo {
+        width: var(--logo-seed);
+        inset-inline-start: clamp(2.2rem, 2.93vw, 3.3rem);
+    }
+    .menuIcon {
+        display: none;
+    }
+    .mainContent {
+        padding: 0;
+        column-gap: 2.4rem;
+    }
+    .siteHeader {
+        width: 100%;
+        grid-area: siteHeader;
+    }
+
+    /*Menu Pane starts here*/
+  .menuPane {
+        width: 34.3rem;
+        position: static;
+        grid-area: menuPane;
+        display: block;
+    }
+.menuLogoContainer {
+    width: 100%;
+    height: 7.60312rem;
+    padding: 2rem 0 1.8rem;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background-color: hsl(35, 60%, 96%);
+    border-bottom: 1px solid hsl(36, 22%, 86%);
+}
+.menuNavigation {
+    width: 100%;
+    margin-top: 1.6rem;
+}
+.menuList {
+    width: 100%;
+    font-family: "DM Sans", sans-serif;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: hsl(33, 17%, 41%);
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1.6rem;
+}
+.menuList1 {
+    width: 100%;
+    padding: 1.3rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: hsl(33, 22%, 20%);
+    background-color: hsl(0, 0%, 100%);
+    border-radius: 1rem;
+}
+.menuList1 div {
+    display: flex;
+    gap: clamp(1rem, -0.4773rem + 4.5455vw, 3rem);
+    align-items: center;
+}
+.menuList1 span {
+    width: 1.6rem;
+    height: 1.6rem;
+    padding: .2rem;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 50%;
+    background-color: hsl(15, 69%, 37%);
+    color: hsl(0, 0%, 100%);
+    text-align: center;
+}
+.menuList2, .menuList3, .menuList4, .menuList5 {
+    width: 100%;
+    padding: 1.3rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+.menuList2:hover {
+    background-color: hsl(0, 0%, 100%);
+    border-radius: 1rem;
+}
+.menuList2:active {
+    border: solid 1px red;
+}
+.menuList3:hover {
+    background-color: hsl(0, 0%, 100%);
+    border-radius: 1rem;
+}
+.menuList4:hover {
+    background-color: hsl(0, 0%, 100%);
+    border-radius: 1rem;
+}
+.menuList5:hover {
+    background-color: hsl(0, 0%, 100%);
+    border-radius: 1rem;
+}
+.menuList img {
+    width: 1.8rem;
+    height: auto;
+}
+.menuNavigation::after {
+    content: "";
+    width: 100%;
+    max-width: 70.5rem;
+    height: 41rem;
+    display: block;
+}
+.weatherWidgetContainer {
+    width: 100%;
+    max-width: 70.5rem;
+    height: auto;
+    margin: 0;
+    padding:  0 0 2rem 0;
+    border-bottom: dashed 1px hsl(36, 22%, 86%);
+}
+.weatherWidget {
+    width: 100%;
+    max-width: 70.5rem;
+    height: auto;
+    padding: 1.3rem 0 1.2rem 1.6rem;
+    display: flex;
+    flex-direction: column;
+    border-radius: 2rem;
+    background-color: hsl(44, 84%, 75%);
+    overflow: hidden;
+}
+.sunIcon-container {
+    width: 100%;
+    position: relative;
+}
+.sunIcon {
+    width: clamp(10rem, 2.61364rem + 22.7273vw, 20rem);
+    height: auto;
+    position: absolute;
+    top: -7rem;
+    right: -2rem;
+}
+.widgetLabel{
+    font-family: "DM Mono", monospace;
+    font-size: 1rem;
+    margin: 0;
+    color: hsl(33, 22%, 20%);
+}
+.widgetDegree {
+    font-family: "Fraunces", sans-serif;
+    font-size: 2.7rem;
+    font-weight: 500;
+    margin: 1rem 0;
+    color: hsl(33, 15%, 15%);
+}
+.widgetAtmosphere {
+    font-family: "DM Sans", sans-serif;
+    font-size: 1.2rem;
+    color: hsl(33, 22%, 20%);
+}
+.menuFooter {
+    width: 100%;
+    max-width: 70.5rem;
+    height: auto;
+    padding-right: 10rem;
+    margin: 1.6rem 0;
+    font-family: "DM Mono", sans-serif;
+    font-size: 1rem;
+    color: hsl(33, 17%, 41%);
+}
+/*Menu Pane ends here*/
+    
+    /** Welcome Pane starts here **/
+    .welcomePane {
+        width: 34.4rem;
+        grid-area: welcomePane;
+    }
+    .welcomePane p {
+        font-size: 1rem;  
+    }
+    .welcomePane h1 {
+        font-size: 3.42rem;
+    }
+    .welcomePanebuttons {
+        gap: 1.6rem;
+    }
+    .receiptButton {
+        width: 16.35rem;
+        font-size: 1.5rem;
+    }
+    .calendarButton {
+        width: 16.35rem;
+        font-size: 1.5rem;
+    }
+    /** Welcome Pane ends here **/
+
+
+
+
+    .serviceInformation {
+        width: 34.4rem;
+        grid-area: serviceInformation;
+    }
+
+    
+
+
+    /** Hero cards start here **/
+     .heroCards {
+        width: 34.3rem;
+        grid-area: heroCards;
+    }
+    .hostNote {
+        padding: 2.3rem 2.4rem 1.4rem;
+    }
+    .welcomeWrapper p {
+        font-size: 1.1rem;
+    }
+    .sunContainer {
+        width: 5rem;
+    }
+    .sun {
+        width: 4.875rem;
+    }
+    .noteIntro{
+        font-size: 1.9rem;
+    }
+    .hostName {
+        font-size: 3.8rem; 
+    }
+    .hostRemarks {
+        font-size: 1.25rem;
+    }
+    .roomLabel {
+        font-size: 1.2rem;
+    }
+    .roomName {
+        font-size: 2rem;  
+    }
+
+    /** booking card starts here **/
+    .bookingCard {
+        padding: 2.4rem 2.4rem 1.5rem;
+    }
+    .receiptLabel {
+        font-size: 1rem;
+    }
+    .receiptNumber {
+        font-size: 1rem;
+    }
+    .stayHeader {
+        font-size: 1.8rem;
+    }
+    .checkInLabel, .checkOutLabel {
+        font-size: 1rem;
+    }
+    .checkInDate, .checkOutDate {
+        font-size: 2.8rem;
+    }
+    .checkInTime, .checkOutTime {
+        font-size: 1.1rem; 
+    }
+    .priceTitles {
+        font-size: 1.4rem;
+        gap: 1.4rem;
+    }
+    .prices {
+        font-size: 1.18rem;
+        gap: 1.4rem;
+    }
+    .paymentSummaryLabel {
+        font-size: 1.18rem;
+    }
+    .paymentSummaryStatus {
+        font-size: 1rem;
+    }
+    .paymentFigures p {
+    font-size: 2.2rem;
+    }
+/** hero cards ends here **/
+
+/** Service Information card starts here **/
+    .serviceInformation {
+        width: 34.3rem;
+        grid-area: serviceInformation;
+    }
+    .arrivalInfo {
+        padding: 1.8rem 2.2rem;
+    }
+
+    .keyContainer {
+        gap: 1rem;
+    }
+    .keyIcon {
+        width: 3.5rem;
+    }
+    .keyContainer p {
+        font-size: 1.25rem;
+    }
+    .arrivalHeaderDigit {
+        font-size: 2.5rem;
+    }
+    .arrivalInfoLabel {
+        font-size: 2.1rem;
+    }
+    .arrivalInfoDate {
+        font-size: 1.2rem;
+    }
+    .arrivalInfoNote {
+        font-size: 1.3rem;
+    }
+/** Arrival card ends here **/
+
+/** Wifi card starts here **/
+    .wifiInfo {
+        padding: 1.8rem 1.5rem 1.9rem;
+    }
+    .wifiIconContainer {
+        gap: 1rem;
+    }
+    .wifiIconContainer p {
+        font-size: 1.25rem;
+    }
+    .wifiHeaderDigit { 
+        font-size: 2.5rem;
+    }
+    .wifiIcon {
+        width: 4rem;
+    }
+    .wifiTitle {
+        font-size: 2.1rem;
+    }
+    .wifiTitleInformation {
+        font-size: 1.12re;
+    }
+    .wifiName, .wifiPassword {
+        padding: 1.2rem 1rem;
+    }
+    .wifiPasswordCopy {
+        font-size: 1.2rem;
+    }
+    .wifiNameLabel {
+        font-size: 1.2rem;
+    }
+    .wifiNameInfo {
+        font-size: 1.2rem;
+    }
+    .wifiPasswordLabel {
+        font-size: 1.2rem;
+    }
+    .wifiPasswordCopyButton {
+        width: 4rem;
+        font-size: 1rem;
+    }
+/** Wifi card ends here **/
+
+/** Breakfast card starts here **/
+   .breakfastInfo {
+        padding: 1.8rem 1.5rem 1.9rem;
+    }
+    .breakfastIconContainer {
+        gap: 1rem;
+    }
+    .breakfastHeaderLabel {
+        font-size: 1.25rem;
+    }
+    .breakfastHeaderDigit {
+        font-size: 2.5rem;
+    }
+    .breakfastIcon {
+        width: 4rem;
+    }
+    .breakfastTime {
+        font-size: 2.1rem;
+    }
+    .breakfastLocation {
+        font-size: 1.25rem;
+    }
+    .breakfastMenu {
+        font-size: 1.3rem;
+    }
+/** Breakfast card ends here **/
+}

@@ -27,11 +27,9 @@
     <label for="menuToggle" class="menuIcon"><img src="assets/images/icon-menu.svg" alt="hamburger menu" class="menuHamburger"></label>
     <label for="menuToggle" class="closeIcon"><img src="assets/images/icon-close.svg" alt="cancel button" class="cancelIcon"></label>
 
-
+  
    <section class="menuPane">
-      <div class="menuLogoContainer">
-        <img src="assets/images/logo.svg" alt="illustration of the sun" class="menuLogo">
-      </div>
+      <div class="menuLogoContainer"></div>
       <nav class="menuNavigation">
         <ul class="menuList">
           <li class="menuList1"><div><img src="assets/images/icon-bed.svg" alt="bed icon">Your stay</div><span>I</span></li>
@@ -64,7 +62,7 @@
       <section class="welcomePane">
         <p>BOOKING · CONFIRMED</p>
         <h1>Bienvenue,&nbsp;<span>Lucia.</span></h1>
-       <div class="welcomePanebuttons">
+        <div class="welcomePanebuttons">
           <button class="receiptButton">Print receipt</button>
           <button class="calendarButton">Add to calendar</button>
         </div>
@@ -141,71 +139,72 @@
         </section>
       </article>
 
-      <article class="arrivalInfo">
-        <div class="arrivalHeader">
-          <div class="keyContainer">
-            <img src="assets/images/icon-key.svg" alt="key icon" class="keyIcon">
-            <p class="arrivalHeader-text">ARRIVAL</p>
+      <article class="serviceInformation">
+        <article class="arrivalInfo">
+          <div class="arrivalHeader">
+            <div class="keyContainer">
+              <img src="assets/images/icon-key.svg" alt="key icon" class="keyIcon">
+              <p class="arrivalHeader-text">ARRIVAL</p>
+            </div>
+
+            <div class="arrivalHeaderDigit">
+              <p>01</p>
+            </div>
           </div>
 
-          <div class="arrivalHeaderDigit">
-            <p>01</p>
-          </div>
-        </div>
+          <p class="arrivalInfoLabel">Check-in from 15:00</p>
+          <p class="arrivalInfoDate">Sat, 25 April</p>
+          <p class="arrivalInfoNote">  Ring the brass bell by the blue door. If we're at the market, the key is in the terracotta pot by the olive tree.</p>
+        </article>
 
-        <p class="arrivalInfoLabel">Check-in from 15:00</p>
-        <p class="arrivalInfoDate">Sat, 25 April</p>
-        <p class="arrivalInfoNote">  Ring the brass bell by the blue door. If we're at the market, the key is in the terracotta pot by the olive tree.</p>
+        <article class="wifiInfo">
+          <div class="wifiHeader">
+            <div class="wifiIconContainer">
+              <img src="assets/images/icon-wifi.svg" alt="wifi icon" class="wifiIcon">
+              <p class="wifiHeaderText">WIFI</p>
+            </div>
+
+            <div class="wifiHeaderDigit">
+              <p>02</p>
+            </div>
+          </div>
+
+          <p class="wifiTitle">Le Soleil &middot; Guest</p>
+          <p class="wifiTitleInformation">Password below</p>
+
+          <div class="wifiName"> 
+            <p class="wifiNameLabel">NETWORK</p>
+            <p class="wifiNameInfo">Le Soleil &middot; Guest</p>
+          </div>
+
+          <div class="wifiPassword"> 
+            <p class="wifiPasswordLabel">PASSWORD</p>
+            <div class="wifiPasswordCopy">
+              <p class="wifiPasswordAccess">soleil-2026</p>
+              <div class="wifiPasswordCopyButton">COPY</div>
+            </div>
+          </div>
+        </article>
+
+        <article class="breakfastInfo">
+          <div class="breakfastHeader">
+            <div class="breakfastIconContainer">
+              <img src="assets/images/icon-breakfast.svg" alt="" class="breakfastIcon">
+              <p class="breakfastHeaderLabel">BREAKFAST</p>
+            </div>
+            <p class="breakfastHeaderDigit">03</p>
+         </div>
+
+          <p class="breakfastTime">Served 8 - 10:30</p>
+          <p class="breakfastLocation">On the terrace</p>
+          <p class="breakfastMenu">Fresh figs, Marseille honey, pain au levain, and espresso. Gluten-free option? Leave a note the night before.</p>
+        </article> 
       </article>
-
-      <article class="wifiInfo">
-        <div class="wifiHeader">
-          <div class="wifiIconContainer">
-            <img src="assets/images/icon-wifi.svg" alt="wifi icon" class="wifiIcon">
-            <p class="wifiHeaderText">WIFI</p>
-          </div>
-
-          <div class="wifiHeaderDigit">
-            <p>02</p>
-          </div>
-        </div>
-
-        <p class="wifiTitle">Le Soleil &middot; Guest</p>
-        <p class="wifiTitleInformation">Password below</p>
-
-        <div class="wifiName"> 
-          <p class="wifiNameLabel">NETWORK</p>
-          <p class="wifiNameInfo">Le Soleil &middot; Guest</p>
-        </div>
-
-        <div class="wifiPassword"> 
-          <p class="wifiPasswordLabel">PASSWORD</p>
-          <div class="wifiPasswordCopy">
-            <p class="wifiPasswordAccess">soleil-2026</p>
-            <button class="wifiPasswordCopyButton">COPY</button>
-          </div>
-        </div>
-      </article>
-
-      <article class="breakfastInfo">
-        <div class="breakfastHeader">
-          <div class="breakfastIconContainer">
-            <img src="assets/images/icon-breakfast-outline.svg" alt="" class="breakfastIcon">
-            <p class="breakfastHeaderLabel">BREAKFAST</p>
-          </div>
-          <p class="breakfastHeaderDigit">03</p>
-        </div>
-
-        <p class="breakfastTime">Served 8 - 10:30</p>
-        <p class="breakfastLocation">On the terrace</p>
-        <p class="breakfastMenu">Fresh figs, Marseille honey, pain au levain, and espresso. Gluten-free option? Leave a note the night before.</p>
-      </article> 
     </main>
-
-    <footer class="attribution">
+  </div>
+  <footer class="attribution">
       Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>.
       Coded by <a href="#">David Badejo</a>.
     </footer>
-  </div>
 </body>
 </html>
