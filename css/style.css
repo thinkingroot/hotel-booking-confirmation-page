@@ -1064,6 +1064,10 @@ border: solid 1px red;
 /** Breakfast card ends here **/
 
 @media (min-width: 1125px){
+    .siteHeader {
+        width: 100%;
+        padding: 1.9rem 2.4rem 1.7rem;
+    }
     .pageWrapper {
         display: grid;
         grid-template-columns: 1fr 1fr;
@@ -1072,13 +1076,14 @@ border: solid 1px red;
         "siteHeader siteHeader siteHeader"
         "menuPane heroCards welcomePane"
         "menuPane heroCards serviceInformation";
+        overflow-x: hidden;
     }
     .headerLogoContainer {
         height: calc(var(--logo-seed) * 0.3925);
     }
     .headerLogo {
         width: var(--logo-seed);
-        inset-inline-start: clamp(2.2rem, 2.93vw, 3.3rem);
+        inset-inline-start: 1rem;
     }
     .menuIcon {
         display: none;
@@ -1094,7 +1099,8 @@ border: solid 1px red;
 
     /*Menu Pane starts here*/
   .menuPane {
-        width: 34.3rem;
+        width: 36.7rem;
+        padding: 0 0 0 2.4rem;
         position: static;
         grid-area: menuPane;
         display: block;
