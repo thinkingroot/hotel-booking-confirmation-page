@@ -1,9 +1,10 @@
 :root {
     font-size: 62.5%;
-    --logo-seed: 10.2rem;
-    --logo-width: calc(-0.9156rem + 29.738vw);
+    --logo-width: 10.2rem;
     --logo-height: calc(var(--logo-width) * 0.3925);
-    --tab-logo: clamp(10.2rem, 13.6vw, 15.3rem)
+    --mobile-logo: clamp(10.2rem, -0.2rem + 27.2vw, 20.4rem);
+    --tab-logo: clamp(10.2rem, 13.6vw, 15.3rem);
+    --desktop-logo: clamp(10.2rem, 29.737vw, 13.29264rem);
 }
 *, *::before, *::after {
     margin: 0;
@@ -22,30 +23,32 @@ body {
 }
 .pageWrapper {
     width: 100%;
-    position: relative;
-    inset: 0;
+    position: static;
+}
+.headerLogoContainer {
+    width: var(--mobile-logo);
+    position: absolute;
+    inset-block-start: 1.9rem;
+    inset-inline-start: clamp(1.6rem, 4.2667vw, 3.2rem);
+    padding: clamp(.2rem, 0.533vw, .4rem);
+    display: block;
+    z-index: 100;
+    box-sizing: content-box;
+}
+.headerLogo {
+    width: var(--mobile-logo);
+    height: auto;
 }
 .siteHeader {
     width: 100%;
-    height: auto;
-    padding: 1.9rem 0 1.7rem clamp(1.8rem, 4.8vw, 3.6rem);
-    position: relative;
+    height: calc(var(--mobile-logo) * 0.3925 + 3.6rem);
+    padding: 1.9rem 0 1.7rem;
     border-bottom: 1px solid hsl(36, 22%, 86%);
-}
-.headerLogoContainer {
-    width: 100%;
-}
-.headerLogo {
-    width: clamp(10.2rem, -0.2rem + 27.2vw, 20.4rem);
-    height: auto;
-    position: relative;
-    display: block;
-    z-index: 100;
 }
 .menuToggle {
     position: absolute;
     inset-block-start: 2.5rem;
-    inset-inline-end: 2rem;
+    inset-inline-end: clamp(2rem, 5.33vw, 4rem);
     display: none;
 }
 .menuIcon {
@@ -85,7 +88,6 @@ body {
 /*Menu Pane starts here*/
 .menuPane {
     width: 100%;
-    max-width: 75rem;
     height: auto;
     padding: 0 clamp(1.6rem, 4.2667vw, 3.2rem);
     position: fixed;
@@ -97,14 +99,13 @@ body {
 }
 .menuLogoContainer {
     width: 100%;
-    height: var(--logo-height);
+    height: calc(var(--mobile-logo) * 0.3925 + 3.6rem);
     padding: 1.9rem 0 1.7rem;
     position: sticky;
     top: 0;
     z-index: 100;
     background-color: hsl(35, 60%, 96%);
     border-bottom: 1px solid hsl(36, 22%, 86%);
-    box-sizing: content-box;
 }
 .menuNavigation {
     width: 100%;
@@ -283,7 +284,6 @@ body {
     font-family: "Fraunces", sans-serif;
     font-size: clamp(3.42rem, 9.12vw, 6.84rem);
     font-weight: 500;
-    letter-spacing: .15rem;
     color: hsl(33, 15%, 15%);
 }
 .welcomePane h1 span {
@@ -760,16 +760,19 @@ border: solid 1px red;
 
 @media (min-width: 750px) {
     /** header starts here **/
-    .siteHeader {
-        min-width: 75rem;
-        padding: 1.9rem clamp(2.13rem, 2.84vw, 3.195rem) 1.7rem clamp(2.2rem, 2.933vw, 3.3rem);
-    }
     .headerLogoContainer {
-        height: calc(var(--tab-logo) * 0.3925);
+        height: auto;
+        padding: 0 clamp(.8rem, 1.067vw, 1.2rem);
+        inset-inline-start: clamp(2.13rem, 2.84vw, 3.195rem);
+        box-sizing: border-box;
     }
     .headerLogo {
         width: var(--tab-logo);
-        inset-inline-start: clamp(2.2rem, 2.93vw, 3.3rem);
+    }
+    .siteHeader {
+        min-width: 75rem;
+        height: calc(var(--tab-logo) * 0.3925 + 3.6rem);
+        padding: 1.9rem clamp(2.13rem, 2.84vw, 3.195rem) 1.7rem clamp(2.2rem, 2.933vw, 3.3rem);
     }
     .menuIcon {
         position: fixed;
@@ -1064,403 +1067,447 @@ border: solid 1px red;
 /** Breakfast card ends here **/
 
 @media (min-width: 1125px){
-    .siteHeader {
-        width: 100%;
-        padding: 1.9rem 2.4rem 1.7rem;
-    }
     .pageWrapper {
         display: grid;
         grid-template-columns: 1fr 1fr;
-        column-gap: 2.4rem;
+        column-gap: clamp(2.4rem, 2.1322rem + 0.238vw, 2.475rem);
         grid-template-areas:
         "siteHeader siteHeader siteHeader"
         "menuPane heroCards welcomePane"
         "menuPane heroCards serviceInformation";
-        overflow-x: hidden;
     }
     .headerLogoContainer {
-        height: calc(var(--logo-seed) * 0.3925);
+        height: calc(var(--desktop-logo) * 0.3925);
     }
     .headerLogo {
-        width: var(--logo-seed);
-        inset-inline-start: 1rem;
+        width: var(--desktop-logo);
+        inset-inline-start: clamp(1rem, -0.0829rem + 0.963vw, 1.3032rem);
+    }
+    .siteHeader {
+        padding: 1.9rem clamp(2.4rem, 2.1322rem + 0.238vw, 2.475rem) 1.7rem;
+        grid-area: siteHeader;
     }
     .menuIcon {
         display: none;
     }
+    .closeIcon {
+        display: none;
+    }
     .mainContent {
+        column-gap: clamp(2.4rem, 2.1322rem + 0.238vw, 2.475rem);
         padding: 0;
-        column-gap: 2.4rem;
     }
     .siteHeader {
-        width: 100%;
         grid-area: siteHeader;
     }
 
     /*Menu Pane starts here*/
   .menuPane {
-        width: 36.7rem;
-        padding: 0 0 0 2.4rem;
+        width: clamp(36.7rem, -0.7107rem + 33.254vw, 47.175rem);
+        padding: 0 0 0 clamp(2.4rem, 2.399rem + 0.7216vw, 2.475rem);
         position: static;
-        grid-area: menuPane;
         display: block;
+        grid-area: menuPane;
     }
 .menuLogoContainer {
-    width: 100%;
-    height: 7.60312rem;
-    padding: 2rem 0 1.8rem;
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    background-color: hsl(35, 60%, 96%);
-    border-bottom: 1px solid hsl(36, 22%, 86%);
-}
-.menuNavigation {
-    width: 100%;
-    margin-top: 1.6rem;
+    height: calc(var(--desktop-logo) * 0.3925 + 3.6rem);
 }
 .menuList {
-    width: 100%;
-    font-family: "DM Sans", sans-serif;
-    font-size: 1.2rem;
-    font-weight: 600;
-    color: hsl(33, 17%, 41%);
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: 1.6rem;
+    font-size: clamp(1.2rem, -0.09946rem + 1.1156vw, 1.5638rem);
+    gap: clamp(1.6rem, -0.1326rem + 1.54vw, 2.085rem);
 }
 .menuList1 {
-    width: 100%;
-    padding: 1.3rem;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    color: hsl(33, 22%, 20%);
-    background-color: hsl(0, 0%, 100%);
-    border-radius: 1rem;
+    padding: 1.3rem clamp(1.3rem, -0.1077rem + 1.25vw, 1.6942rem);
 }
 .menuList1 div {
-    display: flex;
-    gap: clamp(1rem, -0.4773rem + 4.5455vw, 3rem);
-    align-items: center;
+    gap: clamp(1rem, -0.0829rem + 0.963vw, 1.3032rem);
 }
 .menuList1 span {
-    width: 1.6rem;
-    height: 1.6rem;
-    padding: .2rem;
-    font-size: 1rem;
-    font-weight: 600;
-    border-radius: 50%;
-    background-color: hsl(15, 69%, 37%);
-    color: hsl(0, 0%, 100%);
-    text-align: center;
+    width: clamp(1.6rem, -0.1326rem + 1.54vw, 2.085rem);
+    padding: clamp(0.2rem, -0.01657rem + 0.1925vw, 0.261rem);
+    font-size: clamp(1rem, -0.0829rem + 0.963vw, 1.3032rem);
 }
 .menuList2, .menuList3, .menuList4, .menuList5 {
-    width: 100%;
-    padding: 1.3rem;
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-}
-.menuList2:hover {
-    background-color: hsl(0, 0%, 100%);
-    border-radius: 1rem;
-}
-.menuList2:active {
-    border: solid 1px red;
-}
-.menuList3:hover {
-    background-color: hsl(0, 0%, 100%);
-    border-radius: 1rem;
-}
-.menuList4:hover {
-    background-color: hsl(0, 0%, 100%);
-    border-radius: 1rem;
-}
-.menuList5:hover {
-    background-color: hsl(0, 0%, 100%);
-    border-radius: 1rem;
+    padding: 1.3rem clamp(1.3rem, -0.1077rem + 1.25vw, 1.6942rem);
+    gap: clamp(1rem, -0.0829rem + 0.963vw, 1.3032rem);
 }
 .menuList img {
-    width: 1.8rem;
-    height: auto;
+    width: clamp(1.8rem, -0.149rem + 1.733vw, 2.346rem);
 }
 .menuNavigation::after {
-    content: "";
-    width: 100%;
-    max-width: 70.5rem;
-    height: 41rem;
-    display: block;
-}
-.weatherWidgetContainer {
-    width: 100%;
-    max-width: 70.5rem;
-    height: auto;
-    margin: 0;
-    padding:  0 0 2rem 0;
-    border-bottom: dashed 1px hsl(36, 22%, 86%);
+    height: 48rem;
 }
 .weatherWidget {
-    width: 100%;
-    max-width: 70.5rem;
-    height: auto;
-    padding: 1.3rem 0 1.2rem 1.6rem;
-    display: flex;
-    flex-direction: column;
-    border-radius: 2rem;
-    background-color: hsl(44, 84%, 75%);
-    overflow: hidden;
-}
-.sunIcon-container {
-    width: 100%;
-    position: relative;
+    padding: 1.3rem 0 1.2rem clamp(1.6rem, - 0.1326rem + 1.54vw, 2.085rem);
 }
 .sunIcon {
-    width: clamp(10rem, 2.61364rem + 22.7273vw, 20rem);
-    height: auto;
-    position: absolute;
-    top: -7rem;
-    right: -2rem;
+    width: clamp(10rem, -0.829rem + 9.625vw, 13.032rem);
+    right: clamp(-2rem, -0.0166rem + 0.193vw, -2.606rem);
 }
 .widgetLabel{
-    font-family: "DM Mono", monospace;
-    font-size: 1rem;
-    margin: 0;
-    color: hsl(33, 22%, 20%);
+    font-size: clamp(1rem, -0.0829rem + 0.963vw, 1.3032rem);
 }
 .widgetDegree {
-    font-family: "Fraunces", sans-serif;
-    font-size: 2.7rem;
-    font-weight: 500;
-    margin: 1rem 0;
-    color: hsl(33, 15%, 15%);
+    font-size: clamp(2.7rem, -0.224rem + 2.599vw, 3.5186rem);
 }
 .widgetAtmosphere {
-    font-family: "DM Sans", sans-serif;
-    font-size: 1.2rem;
-    color: hsl(33, 22%, 20%);
+    font-size: clamp(1.2rem, -0.09946rem + 1.1156vw, 1.5638rem);
 }
 .menuFooter {
-    width: 100%;
-    max-width: 70.5rem;
-    height: auto;
-    padding-right: 10rem;
-    margin: 1.6rem 0;
-    font-family: "DM Mono", sans-serif;
-    font-size: 1rem;
-    color: hsl(33, 17%, 41%);
+    padding-right: clamp(10rem, -0.829rem + 9.625vw, 13.032rem);
+    font-size: clamp(1rem, -0.0829rem + 0.963vw, 1.3032rem);
+}
+.menuToggle:checked ~ .menuIcon {
+    display: none;
+}
+.menuToggle:checked ~ .closeIcon {
+    display: none;
+}
+.menuToggle:checked ~ .menuPane {
+    display: block;
+}
+.menuToggle:checked ~ .mainContent::before {
+    content: unset;
+    position: unset;
+    display: none;
 }
 /*Menu Pane ends here*/
     
     /** Welcome Pane starts here **/
     .welcomePane {
-        width: 34.4rem;
+        width: clamp(34.3rem, -2.843rem + 33.0159vw, 44.7rem);
         grid-area: welcomePane;
     }
     .welcomePane p {
-        font-size: 1rem;  
+        font-size: clamp(1rem, -0.0829rem + 0.963vw, 1.3032rem);
     }
     .welcomePane h1 {
-        font-size: 3.42rem;
+        font-size: clamp(3.42rem, -0.2834rem + 3.292vw, 4.457rem);
     }
     .welcomePanebuttons {
-        gap: 1.6rem;
+        gap: clamp(1.6rem, -0.1326rem + 1.54vw, 2.085rem);
     }
     .receiptButton {
-        width: 16.35rem;
-        font-size: 1.5rem;
+        width: clamp(16.35rem, -1.355rem + 15.738vw, 21.307rem);
+        font-size: clamp(1.5rem, -0.1243rem + 1.444vw, 1.955rem);
     }
     .calendarButton {
-        width: 16.35rem;
-        font-size: 1.5rem;
+        width: clamp(16.35rem, -1.355rem + 15.738vw, 21.307rem);
+        font-size: clamp(1.5rem, -0.1243rem + 1.444vw, 1.955rem);
     }
     /** Welcome Pane ends here **/
 
-
-
-
-    .serviceInformation {
-        width: 34.4rem;
-        grid-area: serviceInformation;
-    }
-
-    
-
-
     /** Hero cards start here **/
      .heroCards {
-        width: 34.3rem;
+        width: clamp(34.3rem, -2.843rem + 33.0159vw, 44.7rem);
         grid-area: heroCards;
     }
     .hostNote {
-        padding: 2.3rem 2.4rem 1.4rem;
+        padding: 2.3rem clamp(2.4rem, 2.399rem + 0.7216vw, 2.475rem) 1.4rem;
     }
     .welcomeWrapper p {
-        font-size: 1.1rem;
+        font-size: clamp(1.1rem, -0.091rem + 1.059vw, 1.434rem);
     }
     .sunContainer {
-        width: 5rem;
+        width: clamp(5rem, -0.4143rem + 4.813vw, 6.516rem);
     }
     .sun {
-        width: 4.875rem;
+        width: clamp(4.875rem, -0.4039rem + 4.692vw, 6.353rem);
     }
     .noteIntro{
-        font-size: 1.9rem;
+        font-size: clamp(1.9rem, -0.157rem + 1.829vw, 2.476rem);
     }
     .hostName {
-        font-size: 3.8rem; 
+        font-size: clamp(3.8rem, -0.315rem + 3.657vw, 4.952rem);
     }
     .hostRemarks {
-        font-size: 1.25rem;
+        font-size: clamp(1.25rem, -0.104rem + 1.203vw, 1.63rem);
     }
     .roomLabel {
-        font-size: 1.2rem;
+        font-size: clamp(1.2rem, -0.0994rem + 1.115vw, 1.5638rem);
     }
     .roomName {
-        font-size: 2rem;  
+        font-size: clamp(2rem, -0.1657rem + 1.925vw, 2.606rem);
     }
 
     /** booking card starts here **/
     .bookingCard {
-        padding: 2.4rem 2.4rem 1.5rem;
+        padding: 2.4rem clamp(2.4rem, 2.399rem + 0.7216vw, 2.475rem) 1.5rem;
     }
     .receiptLabel {
-        font-size: 1rem;
+        font-size: clamp(1rem, -0.0829rem + 0.963vw, 1.3032rem);
     }
     .receiptNumber {
-        font-size: 1rem;
+        font-size: clamp(1rem, -0.0829rem + 0.963vw, 1.3032rem);
     }
     .stayHeader {
-        font-size: 1.8rem;
+        font-size: clamp(1.8rem, -0.149rem + 1.733vw, 2.346rem);
     }
     .checkInLabel, .checkOutLabel {
-        font-size: 1rem;
+        font-size: clamp(1rem, -0.0829rem + 0.963vw, 1.3032rem);
     }
     .checkInDate, .checkOutDate {
-        font-size: 2.8rem;
+        font-size: clamp(2.8rem, -0.232rem + 2.695vw, 3.65rem);
     }
     .checkInTime, .checkOutTime {
-        font-size: 1.1rem; 
+        font-size: clamp(1.1rem, -0.091rem + 1.059vw, 1.434rem);
     }
     .priceTitles {
-        font-size: 1.4rem;
-        gap: 1.4rem;
+        font-size: clamp(1.4rem, -0.116rem + 1.348vw, 1.825rem);
+        gap: clamp(1.4rem, -0.116rem + 1.348vw, 1.825rem);
     }
     .prices {
-        font-size: 1.18rem;
-        gap: 1.4rem;
+        font-size: clamp(1.18rem, -0.0986rem + 1.136vw, 1.538rem);
+        gap: clamp(1.4rem, -0.116rem + 1.348vw, 1.825rem);
     }
     .paymentSummaryLabel {
-        font-size: 1.18rem;
+        font-size: clamp(1.18rem, -0.0986rem + 1.136vw, 1.538rem);
     }
     .paymentSummaryStatus {
-        font-size: 1rem;
+        font-size: clamp(1rem, -0.0829rem + 0.963vw, 1.3032rem);
     }
     .paymentFigures p {
-    font-size: 2.2rem;
+    font-size: clamp(2.2rem, -0.182rem + 2.118vw, 2.867rem);
     }
 /** hero cards ends here **/
 
 /** Service Information card starts here **/
     .serviceInformation {
-        width: 34.3rem;
+        width: clamp(34.3rem, -2.843rem + 33.0159vw, 44.7rem);
         grid-area: serviceInformation;
     }
     .arrivalInfo {
-        padding: 1.8rem 2.2rem;
+        padding: 1.8rem clamp(2.2rem, -0.182rem + 2.118vw, 2.867rem);
     }
 
     .keyContainer {
-        gap: 1rem;
+        gap: clamp(1rem, -0.0829rem + 0.963vw, 1.3032rem);
     }
     .keyIcon {
-        width: 3.5rem;
+        width: clamp(3.5rem, -0.29rem + 3.369vw, 4.561rem);
     }
     .keyContainer p {
-        font-size: 1.25rem;
+        font-size: clamp(1.25rem, -0.104rem + 1.203vw, 1.63rem);
     }
     .arrivalHeaderDigit {
-        font-size: 2.5rem;
+        font-size: clamp(2.5rem, -0.208rem + 2.406vw, 3.26rem);
     }
     .arrivalInfoLabel {
-        font-size: 2.1rem;
+        font-size: clamp(2.1rem, -0.174rem + 2.021vw, 2.737rem);
     }
     .arrivalInfoDate {
-        font-size: 1.2rem;
+        font-size: clamp(1.2rem, -0.0994rem + 1.16vw, 1.5638rem);
     }
     .arrivalInfoNote {
-        font-size: 1.3rem;
+        font-size: clamp(1.3rem, -0.108rem + 1.25vw, 1.69rem);
     }
 /** Arrival card ends here **/
 
 /** Wifi card starts here **/
     .wifiInfo {
-        padding: 1.8rem 1.5rem 1.9rem;
+        padding: 1.8rem clamp(1.5rem, -0.125rem + 1.444vw, 1.955rem);
     }
     .wifiIconContainer {
-        gap: 1rem;
+        gap: clamp(1rem, -0.0829rem + 0.963vw, 1.3032rem);
     }
     .wifiIconContainer p {
-        font-size: 1.25rem;
+        font-size: clamp(1.25rem, -0.104rem + 1.203vw, 1.63rem);
     }
     .wifiHeaderDigit { 
-        font-size: 2.5rem;
+        font-size: clamp(2.5rem, -0.208rem + 2.406vw, 3.26rem);
     }
     .wifiIcon {
-        width: 4rem;
+        width: clamp(4rem, -0.33143rem + 3.85vw, 5.213rem);
     }
     .wifiTitle {
-        font-size: 2.1rem;
+        font-size: clamp(2.1rem, -0.174rem + 2.021vw, 2.737rem);
     }
     .wifiTitleInformation {
-        font-size: 1.12re;
+        font-size: clamp(1.12rem, -0.0928rem + 1.078vw, 1.4596rem);
     }
     .wifiName, .wifiPassword {
-        padding: 1.2rem 1rem;
+        padding: 1.2rem clamp(1rem, -0.0829rem + 0.963vw, 1.3032rem);
     }
     .wifiPasswordCopy {
-        font-size: 1.2rem;
+        font-size: clamp(1.2rem, -0.0994rem + 1.16vw, 1.5638rem);
     }
     .wifiNameLabel {
-        font-size: 1.2rem;
+        font-size: clamp(1.2rem, -0.0994rem + 1.16vw, 1.5638rem);
     }
     .wifiNameInfo {
-        font-size: 1.2rem;
+        font-size: clamp(1.2rem, -0.0994rem + 1.16vw, 1.5638rem);
     }
     .wifiPasswordLabel {
-        font-size: 1.2rem;
+        font-size: clamp(1.2rem, -0.0994rem + 1.16vw, 1.5638rem);
     }
     .wifiPasswordCopyButton {
-        width: 4rem;
-        font-size: 1rem;
+        width: clamp(4rem, -0.33143rem + 3.85vw, 5.213rem);
+        font-size: clamp(1rem, -0.0829rem + 0.963vw, 1.3032rem);
     }
 /** Wifi card ends here **/
 
 /** Breakfast card starts here **/
    .breakfastInfo {
-        padding: 1.8rem 1.5rem 1.9rem;
+        padding: 1.8rem clamp(1.5rem, -0.125rem + 1.444vw, 1.955rem);
     }
     .breakfastIconContainer {
-        gap: 1rem;
+        gap: clamp(1rem, -0.0829rem + 0.963vw, 1.3032rem);
     }
     .breakfastHeaderLabel {
-        font-size: 1.25rem;
+        font-size: clamp(1.25rem, -0.104rem + 1.203vw, 1.63rem);
     }
     .breakfastHeaderDigit {
-        font-size: 2.5rem;
+        font-size: clamp(2.5rem, -0.208rem + 2.406vw, 3.26rem);
     }
     .breakfastIcon {
-        width: 4rem;
+        width: clamp(4rem, -0.33143rem + 3.85vw, 5.213rem);
     }
     .breakfastTime {
-        font-size: 2.1rem;
+        font-size: clamp(2.1rem, -0.174rem + 2.021vw, 2.737rem);
     }
     .breakfastLocation {
-        font-size: 1.25rem;
+        font-size: clamp(1.25rem, -0.104rem + 1.203vw, 1.63rem);
     }
     .breakfastMenu {
-        font-size: 1.3rem;
+        font-size: clamp(1.3rem, -0.108rem + 1.25vw, 1.69rem);
     }
 /** Breakfast card ends here **/
+footer {
+   margin-top: 2rem;
+}
+}
+@media (min-width: 1440px) {
+    .pageWrapper {
+        display: grid;
+        grid-template-columns: 26rem 1fr;
+        grid-template-areas:
+        "menuPane mainContent";
+        column-gap: 0;
+    }
+    .siteHeader {
+        display: none;
+    }
+
+    /** Menu Pane starts here **/
+    .menuPane {
+        width: 100%;
+        padding: 0 1.6rem;
+        grid-area: menuPane;
+        border-right: solid 1px hsl(36, 22%, 86%);
+    }
+    .menuLogoContainer {
+    height: calc(var(--desktop-logo) * 0.3925 + 4.4rem);
+    border-bottom: solid 1px hsl(36, 22%, 86%);
+    display: block;
+}
+.menuList {
+    font-size: clamp(1.2rem, -0.09946rem + 1.1156vw, 1.5638rem);
+    gap: clamp(1.6rem, -0.1326rem + 1.54vw, 2.085rem);
+}
+.menuList1 {
+    padding: 1.3rem clamp(1.3rem, -0.1077rem + 1.25vw, 1.6942rem);
+}
+.menuList1 div {
+    gap: clamp(1rem, -0.0829rem + 0.963vw, 1.3032rem);
+}
+.menuList1 span {
+    width: clamp(1.6rem, -0.1326rem + 1.54vw, 2.085rem);
+    padding: clamp(0.2rem, -0.01657rem + 0.1925vw, 0.261rem);
+    font-size: clamp(1rem, -0.0829rem + 0.963vw, 1.3032rem);
+}
+.menuList2, .menuList3, .menuList4, .menuList5 {
+    padding: 1.3rem clamp(1.3rem, -0.1077rem + 1.25vw, 1.6942rem);
+    gap: clamp(1rem, -0.0829rem + 0.963vw, 1.3032rem);
+}
+.menuList img {
+    width: clamp(1.8rem, -0.149rem + 1.733vw, 2.346rem);
+}
+.menuNavigation::after {
+    height: 48rem;
+}
+.weatherWidget {
+    padding: 1.3rem 0 1.2rem clamp(1.6rem, - 0.1326rem + 1.54vw, 2.085rem);
+}
+.sunIcon {
+    width: clamp(10rem, -0.829rem + 9.625vw, 13.032rem);
+    right: clamp(-2rem, -0.0166rem + 0.193vw, -2.606rem);
+}
+.widgetLabel{
+    font-size: clamp(1rem, -0.0829rem + 0.963vw, 1.3032rem);
+}
+.widgetDegree {
+    font-size: clamp(2.7rem, -0.224rem + 2.599vw, 3.5186rem);
+}
+.widgetAtmosphere {
+    font-size: clamp(1.2rem, -0.09946rem + 1.1156vw, 1.5638rem);
+}
+.menuFooter {
+    padding-right: clamp(10rem, -0.829rem + 9.625vw, 13.032rem);
+    font-size: clamp(1rem, -0.0829rem + 0.963vw, 1.3032rem);
+}
+    /** Menu Pane ends here **/
+
+     .mainContent {
+        width: 100%;
+        padding: 3.3rem 4rem 0;
+        display: flex;
+        flex-direction: column;
+        grid-area: mainContent;
+    }
+
+    /** Welcome Pane starts here **/
+    .welcomePane {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .welcomePaneHeader {
+        width: 32rem;
+    }
+     .welcomePane p {
+        font-size: 1.5rem;
+        line-height: 2.7rem; 
+    }
+    .welcomePane h1 {
+        font-size: 5.1rem;
+    }
+    .welcomePanebuttons {
+        width: 29rem;
+        gap: 1.6rem;
+    }
+    .receiptButton {
+        width: 12rem;
+        font-size: 1.5rem;
+        padding: 1.1rem 0;
+        height: auto;
+    }
+    .calendarButton {
+        width: 14.5rem;
+        font-size: 1.5rem;
+        padding: 1.1rem 0;
+        height: auto;
+    }
+    /** Welcome Pane ends here **/
+
+    .heroCards {
+        width: 100%;
+        padding: 0 14rem;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas:
+        "bookingCard hostNote";
+    }
+    .bookingCard {
+        width: 40rem;
+        grid-area: bookingCard;
+    }
+    .hostNote {
+        width: 40rem;
+        grid-area: hostNote;
+    }
+    .serviceInformation {
+        width: 100%;
+        display: flex;
+    }
 }
