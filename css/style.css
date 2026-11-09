@@ -1466,6 +1466,7 @@ footer {
         display: flex;
         flex-direction: column;
         grid-area: mainContent;
+        margin-top: 0;
     }
 
     /** Welcome Pane starts here **/
