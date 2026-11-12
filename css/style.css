@@ -90,7 +90,7 @@ body {
     width: 100%;
     height: auto;
     padding: 0 clamp(1.6rem, 4.2667vw, 3.2rem);
-    position: fixed;
+    position: absolute;
     inset: 0;
     display: none;
     background-color: hsl(35, 60%, 96%);
@@ -761,7 +761,7 @@ border: solid 1px red;
 }
 /** Breakfast card ends here **/
 
-@media (min-width: 750px) {
+@media (min-width: 75rem) {
     /** header starts here **/
     .headerLogoContainer {
         height: auto;
@@ -864,7 +864,7 @@ border: solid 1px red;
 /** Main content starts here **/
     .mainContent {
         display: grid;
-        grid-template-columns: (1fr, 1fr);
+        grid-template-columns: 1fr, 1fr;
         grid-template-areas:
         "heroCards welcomePane"
         "heroCards serviceInformation";
@@ -1072,7 +1072,7 @@ border: solid 1px red;
 /** Breakfast card ends here **/
 }
 
-@media (min-width: 1125px){
+@media (min-width: 112.5rem) {
     .pageWrapper {
         display: grid;
         grid-template-columns: 1fr 1fr;
@@ -1377,7 +1377,7 @@ footer {
    margin-top: 2rem;
 }
 }
-@media (min-width: 1440px) {
+@media (min-width: 144rem) {
     .pageWrapper {
         display: grid;
         grid-template-columns: 26rem 1fr;
